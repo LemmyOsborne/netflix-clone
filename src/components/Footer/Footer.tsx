@@ -3,11 +3,11 @@ import { Container, Row, Column, Link, Title, BottomText } from "./Footer.styles
 
 
 interface FooterComposition {
-    Row: React.FC
-    Column: React.FC
-    Link: React.FC<{href: string}>
-    Title: React.FC
-    BottomText: React.FC
+    Row: React.FC<React.HTMLAttributes<HTMLDivElement>>
+    Column: React.FC<React.HTMLAttributes<HTMLDivElement>>
+    Link: React.FC<React.AnchorHTMLAttributes<HTMLAnchorElement>>
+    Title: React.FC<React.HTMLAttributes<HTMLParagraphElement>>
+    BottomText: React.FC<React.HTMLAttributes<HTMLParagraphElement>>
 }
 
 export const Footer: React.FC & FooterComposition = ({ children, ...restProps }) => {

@@ -1,23 +1,17 @@
 import React, { ReactNode } from "react";
 import { Inner, Container, Pane, Image, Title, SubTitle, Item } from "./Jumbotron.styles";
 
-export interface Props {
-    direction?: string
-    children?: ReactNode
-    src?: string
-    alt?: string
-}
 
 interface JumbotronComposition {
-    Container: React.FC<Props>
-    Pane: React.FC<Props>
-    Title: React.FC<Props>
-    SubTitle: React.FC<Props>
-    Image: React.FC<Props>
+    Container: React.FC<React.HTMLAttributes<HTMLDivElement>>
+    Pane: React.FC<React.HTMLAttributes<HTMLDivElement>>
+    Title: React.FC<React.HTMLAttributes<HTMLHeadingElement>>
+    SubTitle: React.FC<React.HTMLAttributes<HTMLHeadingElement>>
+    Image: React.FC<React.ImgHTMLAttributes<HTMLImageElement>>
 }
 
 
-export const Jumbotron: React.FC<Props> & JumbotronComposition = ({ children, direction }) => {
+export const Jumbotron: React.FC<{direction: string}> & JumbotronComposition = ({ children, direction }) => {
     return (
         <Item>
             <Inner direction={direction}>

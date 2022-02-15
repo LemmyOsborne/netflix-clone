@@ -1,7 +1,6 @@
 import styled from "styled-components";
-import { Props } from "./Jumbotron";
 
-export const Inner = styled.div<Props>`
+export const Inner = styled.div<{direction: string}>`
     display: flex;
     align-items: center;
     flex-direction: ${({ direction }) => direction};

@@ -3,11 +3,11 @@ import { Container, Inner, Title, Frame, Item, Header, Body } from "./Acccordion
 
 
 type AccordionComposition = {
-    Title: React.FC
-    Frame: React.FC
-    Item: React.FC
-    Header: React.FC
-    Body: React.FC
+    Title: React.FC<React.HTMLAttributes<HTMLHeadingElement>>
+    Frame: React.FC<React.HTMLAttributes<HTMLDivElement>>
+    Item: React.FC<React.HTMLAttributes<HTMLDivElement>>
+    Header: React.FC<React.HTMLAttributes<HTMLDivElement>>
+    Body: React.FC<React.HTMLAttributes<HTMLDivElement>>
 }
 
 interface AccordionContext {
