@@ -1,15 +1,24 @@
 import React from 'react';
-import { Container, Input, Button, Text } from "./AccordionForm.styles";
+import { Container, Input, Button, Text, InputGroup } from "./AccordionForm.styles";
 
 
 interface AccordionFormComposition {
     Input: React.FC<React.InputHTMLAttributes<HTMLInputElement>>
     Button: React.FC<React.ButtonHTMLAttributes<HTMLButtonElement>>
     Text: React.FC<React.HTMLAttributes<HTMLDivElement>>
+    InputGroup: React.FC<React.HTMLAttributes<HTMLDivElement>>
 }
 
-export const AccordionForm: React.FC & AccordionFormComposition = ({ children, ...restProps }) => {
-    return <Container {...restProps}>{children}</Container>
+export const AccordionForm: React.FC<{direction: string}> & AccordionFormComposition = ({ direction, children, ...restProps }) => {
+    return (
+        <Container direction={direction} {...restProps}>
+            {children}
+        </Container>
+    )
+}
+
+AccordionForm.InputGroup = function AccordionFormInputGroup({ children, ...restProps }) {
+    return <InputGroup {...restProps}>{children}</InputGroup>
 }
 
 AccordionForm.Input = function AccordionFormInput({ ...restProps }) {
