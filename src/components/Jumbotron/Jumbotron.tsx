@@ -44,6 +44,6 @@ Jumbotron.SubTitle = ({ children, ...restProps }) => {
     return <SubTitle {...restProps}>{children}</SubTitle>
 }
 
-Jumbotron.Image = ({ src, alt, ...restProps }) => {
-    return <Image src={src} alt={alt} {...restProps} />
+Jumbotron.Image = ({ ...restProps }) => {
+    return <Image {...restProps} />
 }
