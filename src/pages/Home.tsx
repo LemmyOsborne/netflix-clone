@@ -11,14 +11,14 @@ export const Home: React.FC = () => {
         <>
             <HeaderContainer>
                 <Feature>
-                    <Feature.Title>Unlimited films, TV programmes and more.</Feature.Title>
-                    <Feature.SubTitle>Watch anywhere. Cancel at any time.</Feature.SubTitle>
+                    <Feature.Title>Unlimited movies, TV shows, and more.</Feature.Title>
+                    <Feature.SubTitle>Watch anywhere. Cancel anytime.</Feature.SubTitle>
                     <AccordionForm direction="column">
+                        <AccordionForm.Text>Ready to watch? Enter your email to create or restart your membership.</AccordionForm.Text>
                         <AccordionForm.InputGroup>
                             <AccordionForm.Input placeholder="Email address" />
-                            <AccordionForm.Button>Try it now</AccordionForm.Button>
+                            <AccordionForm.Button>Get Started</AccordionForm.Button>
                         </AccordionForm.InputGroup>
-                        <AccordionForm.Text>Ready to watch? Enter your email to create or restart your membership.</AccordionForm.Text>
                     </AccordionForm>
                 </Feature>
             </HeaderContainer>

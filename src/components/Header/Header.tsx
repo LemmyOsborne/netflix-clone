@@ -3,10 +3,10 @@ import { Link, LinkProps } from 'react-router-dom';
 import { Background, ButtonLink, Container, Logo, Text } from "./Header.styles";
 
 interface HeaderComposition {
-    Frame?: React.FC<React.HTMLAttributes<HTMLDivElement>> 
+    Frame: React.FC<React.HTMLAttributes<HTMLDivElement>> 
     Text?: React.FC<React.HTMLAttributes<HTMLParagraphElement>>
-    ButtonLink?: React.FC<React.ForwardRefExoticComponent<LinkProps | React.RefAttributes<HTMLAnchorElement>>>
-    Logo?: React.FC<{ to: string, src: string, alt: string }>
+    ButtonLink: React.FC<LinkProps>
+    Logo: React.FC<{ to: string, src: string, alt: string }>
 }
 
 export const Header: React.FC & HeaderComposition = ({ children, ...restProps }) => {
@@ -35,5 +35,5 @@ Header.Text = function HeaderText({ children, ...restProps }) {
 }
 
 Header.ButtonLink = function HeaderButtonLink({ children, ...restProps }) {
-    return <ButtonLink to="#" {...restProps}>{children}</ButtonLink>
+    return <ButtonLink {...restProps}>{children}</ButtonLink>
 }

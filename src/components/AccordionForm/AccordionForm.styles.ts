@@ -5,7 +5,7 @@ export const Container = styled.div<{direction: string}>`
   flex-direction: ${({ direction }) => direction};
   justify-content: center;
   height: 100%;
-  margin-top: 20px;
+  margin: 20px 0 4rem;
   flex-wrap: wrap;
  
   @media (max-width: 1000px) {
@@ -16,6 +16,7 @@ export const Container = styled.div<{direction: string}>`
 
 export const InputGroup = styled.div`
   display: flex;
+  align-items: center;
   justify-content: center;
 `
 
@@ -30,13 +31,15 @@ export const Input = styled.input`
 
 export const Button = styled.button`
   display: flex;
+  justify-content: center;
   align-items: center;
   height: 70px;
+  width: fit-content;
+  white-space: nowrap;
   background: #e50914;
   color: white;
-  text-transform: uppercase;
   padding: 0 32px;
-  font-size: 26px;
+  font-size: 1.875rem;
   border: 0;
   cursor: pointer;
   
@@ -55,9 +58,7 @@ export const Button = styled.button`
   }
   
   @media (max-width: 1000px) {
-    height: 50px;
     font-size: 16px;
-    margin-top: 20px;
     font-weight: bold;
   }
 `
@@ -66,7 +67,6 @@ export const Text = styled.p`
   font-size: 19.2px;
   color: white;
   text-align: center;
-  margin-top: 40px;
   
   @media (max-width: 600px) {
     font-size: 16px;

@@ -6,19 +6,23 @@ export const Background = styled.div<{src?: string}>`
   flex-direction: column;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.35)), 
   url(${({ src }) => (src ? `../images/misc/${src}.jpg` : '../images/misc/home-bg.jpg')}) top left / cover no-repeat;
+  
+  @media (max-width: 700px) {
+        background: black;
+    }
 `
 
 export const Container = styled.div`
   display: flex;
   margin: 0 56px;
-  height: 100px;
+  height: 75px;
   justify-content: space-between;
   align-items: center;
   a {
     display: flex;
   }
   @media (max-width: 1000px) {
-    margin: 0 30px;
+    margin: 0 20px;
   }
 `
 
@@ -27,7 +31,6 @@ export const ButtonLink = styled(Link)`
   justify-content: center;
   background-color: #e50914;
   width: 84px;
-  height: fit-content;
   color: white;
   border: 0;
   font-size: 15px;
@@ -39,7 +42,7 @@ export const ButtonLink = styled(Link)`
   &:hover {
     background: #f40612;
   }
-`;
+`
 
 export const Feature = styled(Container)`
   padding: 150px 0 500px 0;
@@ -69,12 +72,12 @@ export const Text = styled.p`
 `
 
 export const Logo = styled.img`
-  height: 36px;
-  width: 134px;
+  height: 45px;
+  width: 167px;
   margin-right: 40px;
   
-  @media (min-width: 1449px) {
-    height: 45px;
-    width: 167px;
+  @media (max-width: 700px) {
+    height: 20px;
+    width: 75px;
   }
 `

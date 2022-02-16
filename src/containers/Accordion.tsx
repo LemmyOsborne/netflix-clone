@@ -18,9 +18,9 @@ export const AccordionContainer: React.FC = () => {
             </Accordion.Frame>
 
             <AccordionForm direction="row">
+                <AccordionForm.Text>Ready to watch? Enter your email to create or restart your membership.</AccordionForm.Text>
                 <AccordionForm.Input placeholder="Email address" />
                 <AccordionForm.Button>Try it now</AccordionForm.Button>
-                <AccordionForm.Text>Ready to watch? Enter your email to create or restart your membership.</AccordionForm.Text>
             </AccordionForm>
         </Accordion>
     )

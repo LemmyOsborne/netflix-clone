@@ -9,7 +9,7 @@ interface AccordionFormComposition {
     InputGroup: React.FC<React.HTMLAttributes<HTMLDivElement>>
 }
 
-export const AccordionForm: React.FC<{direction: string}> & AccordionFormComposition = ({ direction, children, ...restProps }) => {
+export const AccordionForm: React.FC<{ direction: string }> & AccordionFormComposition = ({ direction, children, ...restProps }) => {
     return (
         <Container direction={direction} {...restProps}>
             {children}
@@ -26,9 +26,11 @@ AccordionForm.Input = function AccordionFormInput({ ...restProps }) {
 }
 
 AccordionForm.Button = function AccordionFormButton({ children, ...restProps }) {
-    return <Button {...restProps}>
-        {children} <img src="/images/icons/chevron-right.png" alt="Try now" />
-    </Button>
+    return (
+        <Button {...restProps}>
+            {children} <img src="/images/icons/chevron-right.png" alt="Try now" />
+        </Button>
+    )
 }
 
 AccordionForm.Text = function AccordionFormInput({ children, ...restProps }) {

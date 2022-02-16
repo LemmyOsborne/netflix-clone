@@ -1,4 +1,4 @@
-import React, { useState, useContext, createContext, ReactNode } from 'react';
+import React, { useState, useContext, createContext } from 'react';
 import { Container, Inner, Title, Frame, Item, Header, Body } from "./Acccordion.styles";
 
 

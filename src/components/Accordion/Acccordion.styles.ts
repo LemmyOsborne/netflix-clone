@@ -7,9 +7,9 @@ export const Container = styled.div`
 
 export const Inner = styled.div`
     display: flex;
-    padding: 70px 45px;
+    padding: 0.8em 2.2em 0.8em 1.2em;
     flex-direction: column;
-    max-width: 815px;
+    width: 815px;
     margin: auto;
 `
 
@@ -34,7 +34,6 @@ export const Item = styled.div`
     color: white;
     margin: auto;
     margin-bottom: 10px;
-    max-width: 728px;
     width: 100%;
     
     &:first-of-type {
@@ -74,7 +73,7 @@ export const Header = styled.div`
 `
 
 export const Body = styled.div`
-    font-size: 16px;
+    font-size: 1.625rem;
     font-weight: normal;
     line-height: normal;
     background: #303030;
