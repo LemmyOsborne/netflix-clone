@@ -3,9 +3,9 @@ import { Link, LinkProps } from 'react-router-dom';
 import { Background, ButtonLink, Container, Logo, Text } from "./Header.styles";
 
 interface HeaderComposition {
-    Frame?: React.FC<React.HTMLAttributes<HTMLDivElement>>
+    Frame?: React.FC<React.HTMLAttributes<HTMLDivElement>> 
     Text?: React.FC<React.HTMLAttributes<HTMLParagraphElement>>
-    ButtonLink?: React.FC<React.ForwardRefExoticComponent<LinkProps & React.RefAttributes<HTMLAnchorElement>>>
+    ButtonLink?: React.FC<React.ForwardRefExoticComponent<LinkProps | React.RefAttributes<HTMLAnchorElement>>>
     Logo?: React.FC<{ to: string, src: string, alt: string }>
 }
 
@@ -18,7 +18,7 @@ export const Header: React.FC & HeaderComposition = ({ children, ...restProps })
 }
 
 
-Header.Frame = function ButonFrame({ children, ...restProps }) {
+Header.Frame = function HeaderFrame({ children, ...restProps }) {
     return <Container {...restProps}>{children}</Container>
 }
 
