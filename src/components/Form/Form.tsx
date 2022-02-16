@@ -1,10 +1,11 @@
-import React, { ReactHTML } from 'react';
+import React from 'react';
 import { LinkProps } from 'react-router-dom';
-import { Container, Inner, RememberMeCheckbox, Title, InputWrapper, Input, Label, Button, RememberMe, FacebookLogin, SignUpLink, CaptchaText, Error } from "./Form.styles";
+import { Container, Inner, RememberMeCheckbox, Title, Base, InputWrapper, Input, Label, Button, RememberMe, FacebookLogin, SignUpLink, CaptchaText, Error } from "./Form.styles";
 
 
 interface FormComposition {
     Title: React.FC<React.HTMLAttributes<HTMLHeadingElement>>
+    Base: React.FC<React.FormHTMLAttributes<HTMLFormElement>>
     InputWrapper: React.FC<React.HTMLAttributes<HTMLDivElement>>
     Input: React.FC<React.InputHTMLAttributes<HTMLInputElement>>
     Label: React.FC<React.LabelHTMLAttributes<HTMLLabelElement> & { placeholderToggle: boolean }>
@@ -17,7 +18,7 @@ interface FormComposition {
     CaptchaText: React.FC<React.HTMLAttributes<HTMLDivElement>>
 }
 
-export const Form: React.FC<{onSubmit: () => void}> & FormComposition = ({ onSubmit, children, ...restProps }) => {
+export const Form: React.FC & FormComposition = ({ children, ...restProps }) => {
     return (
         <Container {...restProps}>
             <Inner>
@@ -30,6 +31,10 @@ export const Form: React.FC<{onSubmit: () => void}> & FormComposition = ({ onSub
 
 Form.Title = function FormTitle({ children, ...restProps }) {
     return <Title {...restProps}>{children}</Title>
+}
+
+Form.Base = function FormBase({ children, ...restProps }) {
+    return <Base {...restProps}>{children}</Base>
 }
 
 Form.InputWrapper = function FormInputWrapper({ children, ...restProps }) {

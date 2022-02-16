@@ -13,7 +13,7 @@ export const Container = styled.div`
     }
 `
 
-export const Inner = styled.form`
+export const Inner = styled.div`
     display: flex;
     flex-direction: column;
     background-color: rgba(0, 0, 0, .75);
@@ -29,6 +29,8 @@ export const Inner = styled.form`
 export const Title = styled.h1`
     color: white;
 `
+export const Base = styled.form``
+
 export const InputWrapper = styled.div`
     position: relative;
     width: 100%; 
