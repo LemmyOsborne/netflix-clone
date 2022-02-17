@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createContext, useContext, useState } from 'react';
 import { LinkProps } from 'react-router-dom';
 import { Container, Inner, RememberMeCheckbox, Title, Base, InputWrapper, Input, Label, Button, RememberMe, FacebookLogin, SignUpLink, CaptchaText, Error } from "./Form.styles";
 
@@ -8,7 +8,7 @@ interface FormComposition {
     Base: React.FC<React.FormHTMLAttributes<HTMLFormElement>>
     InputWrapper: React.FC<React.HTMLAttributes<HTMLDivElement>>
     Input: React.FC<React.InputHTMLAttributes<HTMLInputElement>>
-    Label: React.FC<React.LabelHTMLAttributes<HTMLLabelElement> & { placeholderToggle: boolean }>
+    Label: React.FC<React.LabelHTMLAttributes<HTMLLabelElement>>
     Error: React.FC<React.HTMLAttributes<HTMLDivElement>>
     Button: React.FC<React.ButtonHTMLAttributes<HTMLButtonElement>>
     RememberMe: React.FC<React.HTMLAttributes<HTMLDivElement>>
@@ -17,6 +17,13 @@ interface FormComposition {
     SignUpLink: React.FC<LinkProps>
     CaptchaText: React.FC<React.HTMLAttributes<HTMLDivElement>>
 }
+
+interface FormInputContext {
+    togglePlaceholder: boolean
+    setTogglePlaceholder: React.Dispatch<React.SetStateAction<boolean>>
+}
+
+export const ToggleContext = createContext({} as FormInputContext)
 
 export const Form: React.FC & FormComposition = ({ children, ...restProps }) => {
     return (
@@ -38,15 +45,40 @@ Form.Base = function FormBase({ children, ...restProps }) {
 }
 
 Form.InputWrapper = function FormInputWrapper({ children, ...restProps }) {
-    return <InputWrapper {...restProps}>{children}</InputWrapper>
+    //Using state to animate placeholders in inputs, which represent by label tags
+
+    const [togglePlaceholder, setTogglePlaceholder] = useState(false)
+
+    return (
+        <ToggleContext.Provider value={{ togglePlaceholder, setTogglePlaceholder }}>
+            <InputWrapper {...restProps}>
+                {children}
+            </InputWrapper>
+        </ToggleContext.Provider>
+    )
 }
 
-Form.Input = function FormInput({ ...restProps }) {
-    return <Input {...restProps} />
+Form.Input = function FormInput({ value, ...restProps }) {
+    const { togglePlaceholder, setTogglePlaceholder } = useContext(ToggleContext)
+
+    const handleInputFocus = () => {
+        !value
+            ? setTogglePlaceholder(!togglePlaceholder)
+            : setTogglePlaceholder(togglePlaceholder)
+    }
+
+    return <Input
+        value={value}
+        onFocus={handleInputFocus}
+        onBlur={handleInputFocus}
+        {...restProps}
+    />
 }
 
-Form.Label = function FormLabel({ placeholderToggle, children, ...restProps }) {
-    return <Label className={placeholderToggle ? "isToggle" : ""} {...restProps}>{children}</Label>
+Form.Label = function FormLabel({ children, ...restProps }) {
+    const { togglePlaceholder } = useContext(ToggleContext)
+
+    return <Label className={togglePlaceholder ? "isToggle" : ""} {...restProps}>{children}</Label>
 }
 
 Form.Error = function FormError({ children, ...restProps }) {

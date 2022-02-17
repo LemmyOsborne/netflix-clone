@@ -9,28 +9,12 @@ import { FirebaseError } from 'firebase/app';
 import { Form } from '../components';
 
 export const SignIn: React.FC = () => {
-  //Using state to animate label tags in inputs
-  const [firstPlaceholderToggle, setFirstPlaceholderToggle] = useState(false)
-  const [secondPlaceholderToggle, setSecondPlaceholderToggle] = useState(false)
-
   const [emailAddress, setEmailAddress] = useState("")
   const [password, setPassword] = useState("")
   const [error, setError] = useState("")
   const isInvalid = password === '' || emailAddress === ''
 
   const navigate = useNavigate()
-
-  const handleFirstInputFocus = () => {
-      !emailAddress 
-      ? setFirstPlaceholderToggle(!firstPlaceholderToggle)
-      : setFirstPlaceholderToggle(firstPlaceholderToggle)
-  }
-
-  const handleSecondInputFocus = () => {
-      !password
-      ? setSecondPlaceholderToggle(!secondPlaceholderToggle)
-      : setSecondPlaceholderToggle(secondPlaceholderToggle)
-  }
 
   const auth = getAuth()
   const handleSubmit = (e: FormEvent) => {
@@ -52,7 +36,7 @@ export const SignIn: React.FC = () => {
         <Form>
             <Form.Title>Sign In</Form.Title>
             <Form.Base onSubmit={handleSubmit} >
-            <Form.InputWrapper onFocus={handleFirstInputFocus} onBlur={handleFirstInputFocus} >
+            <Form.InputWrapper >
                 <Form.Input
                     value={emailAddress}
                     autoComplete="off"
@@ -62,12 +46,11 @@ export const SignIn: React.FC = () => {
                 />
                 <Form.Label
                     htmlFor="emailInput"
-                    placeholderToggle={firstPlaceholderToggle}
                 >
                     Email or phone number
                 </Form.Label>
             </Form.InputWrapper>
-            <Form.InputWrapper onFocus={handleSecondInputFocus} onBlur={handleSecondInputFocus}>
+            <Form.InputWrapper>
                 <Form.Input
                     value={password}
                     id="passwordInput"
@@ -76,7 +59,6 @@ export const SignIn: React.FC = () => {
                 />
                 <Form.Label
                     htmlFor="passwordInput"
-                    placeholderToggle={secondPlaceholderToggle}
                 >
                     Password
                 </Form.Label>
