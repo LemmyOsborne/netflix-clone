@@ -9,9 +9,10 @@ interface HeaderComposition {
     Logo: React.FC<{ to: string, src: string, alt: string }>
 }
 
-export const Header: React.FC & HeaderComposition = ({ children, ...restProps }) => {
+export const Header: React.FC<{bg?: string}> & HeaderComposition = ({ bg, children, ...restProps }) => {
+
     return (
-        <Background {...restProps}>
+        <Background className={bg && "changeBackground"} {...restProps}>
             {children}
         </Background>
     ) 

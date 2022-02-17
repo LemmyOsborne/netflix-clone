@@ -22,12 +22,18 @@ export const Inner = styled.div`
     border-radius: 4px;
 
     @media (max-width: 700px) {
-        width: 100%;
+        max-width: 500px;
+        padding: 0 20px 160px;
     }
 `
 
 export const Title = styled.h1`
     color: white;
+    padding-bottom: 10px;
+
+    @media (max-width: 700px) {
+        margin-top: 0;
+    }
 `
 export const Base = styled.form``
 
@@ -35,7 +41,7 @@ export const InputWrapper = styled.div`
     position: relative;
     width: 100%; 
     height: 50px; 
-    margin-bottom: 40px;
+    margin-bottom: 15px;
 `
 
 export const Input = styled.input`
@@ -84,6 +90,7 @@ export const Button = styled.button`
     background-color: #e50914;
     width: 100%;
     cursor: pointer;
+    margin-top: 30px;
 `
 
 export const RememberMe = styled.div`

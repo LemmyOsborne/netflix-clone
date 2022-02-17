@@ -1,14 +1,16 @@
 import styled from 'styled-components/macro';
 import { Link } from 'react-router-dom';
 
-export const Background = styled.div<{src?: string}>`
+export const Background = styled.div<{ src?: string }>`
   display: flex;
   flex-direction: column;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.35)), 
   url(${({ src }) => (src ? `../images/misc/${src}.jpg` : '../images/misc/home-bg.jpg')}) top left / cover no-repeat;
   
   @media (max-width: 700px) {
-        background: black;
+        &.changeBackground {
+          background: black;
+        }
     }
 `
 
@@ -18,9 +20,11 @@ export const Container = styled.div`
   height: 75px;
   justify-content: space-between;
   align-items: center;
+  
   a {
     display: flex;
   }
+  
   @media (max-width: 1000px) {
     margin: 0 20px;
   }

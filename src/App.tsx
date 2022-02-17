@@ -23,7 +23,7 @@ const App: React.FC = () => {
         <Route path={ROUTES.HOME} element={<Home />} />
         <Route path={ROUTES.SIGNIN} element={<SignIn />} />
         <Route path={ROUTES.SIGNUP} element={<SignUp />} />
-        <Route path={ROUTES.BROWSE} element={user ? <Browse /> : <Navigate to={ROUTES.HOME} />} />
+        <Route path={ROUTES.BROWSE} element={user ? <Browse /> : <Navigate to={ROUTES.SIGNIN} />} />
       </Routes>
     </Router>
   )
