@@ -1,11 +1,10 @@
-import React, { FormEvent, SyntheticEvent } from 'react';
+import React, { FormEvent, useCallback } from 'react';
 import { HeaderContainer } from '../containers/Header';
 import { FooterContainer } from '../containers/Footer';
 import { useState } from 'react';
 import * as ROUTES from "../constants/routes";
 import { getAuth, createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { useNavigate } from 'react-router-dom';
-import { FirebaseError } from 'firebase/app';
 import { Form } from '../components';
 
 export const SignUp: React.FC = () => {
@@ -18,24 +17,23 @@ export const SignUp: React.FC = () => {
   const navigate = useNavigate()
 
   const auth = getAuth()
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = useCallback(async (e: FormEvent) => {
     e.preventDefault()
 
-    return createUserWithEmailAndPassword(auth, emailAddress, password)
-      .then(() => {
-        const user = auth.currentUser
-        user && updateProfile(user, {
-          displayName: firstName, photoURL: (Math.floor(Math.random() * 5) + 1).toString(),
-        })
-        navigate(ROUTES.BROWSE)
+    try {
+      await createUserWithEmailAndPassword(auth, emailAddress, password)
+      const user = auth.currentUser
+      user && updateProfile(user, {
+        displayName: firstName, photoURL: (Math.floor(Math.random() * 5) + 1).toString(),
       })
-      .catch((error: FirebaseError) => {
+      navigate(ROUTES.BROWSE)
+    } catch (error: any) {
         setFirstName("")
         setEmailAddress("")
         setPassword("")
         setError(error.message)
-      })
-  }
+      }
+  }, [auth, emailAddress, password, firstName, navigate])
 
   return (
     <>
@@ -87,7 +85,7 @@ export const SignUp: React.FC = () => {
             <Form.Button disabled={isInvalid} type="submit">Sign In</Form.Button>
             <Form.RememberMe>
               <div>
-                <Form.RememberMeCheckbox type="checkbox" id="checkbox" />
+                <Form.Checkbox type="checkbox" id="checkbox" />
                 <label htmlFor="checkbox">Remember Me</label>
               </div>
               <span>Need help?</span>

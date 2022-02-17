@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState } from 'react';
 import { LinkProps } from 'react-router-dom';
-import { Container, Inner, RememberMeCheckbox, Title, Base, InputWrapper, Input, Label, Button, RememberMe, FacebookLogin, SignUpLink, CaptchaText, Error } from "./Form.styles";
+import { Container, Inner, Checkbox, Title, Base, InputWrapper, Input, Label, Button, RememberMe, FacebookLogin, SignUpLink, CaptchaText, Error } from "./Form.styles";
 
 
 interface FormComposition {
@@ -12,7 +12,7 @@ interface FormComposition {
     Error: React.FC<React.HTMLAttributes<HTMLDivElement>>
     Button: React.FC<React.ButtonHTMLAttributes<HTMLButtonElement>>
     RememberMe: React.FC<React.HTMLAttributes<HTMLDivElement>>
-    RememberMeCheckbox: React.FC<React.InputHTMLAttributes<HTMLInputElement>>
+    Checkbox: React.FC<React.InputHTMLAttributes<HTMLInputElement>>
     FacebookLogin: React.FC<React.AnchorHTMLAttributes<HTMLAnchorElement>>
     SignUpLink: React.FC<LinkProps>
     CaptchaText: React.FC<React.HTMLAttributes<HTMLDivElement>>
@@ -93,8 +93,8 @@ Form.RememberMe = function FormRememberMe({ children, ...restProps }) {
     return <RememberMe {...restProps}>{children}</RememberMe>
 }
 
-Form.RememberMeCheckbox = function FormRememberMeCheckbox({ ...restProps }) {
-    return <RememberMeCheckbox {...restProps} />
+Form.Checkbox = function FormCheckbox({ ...restProps }) {
+    return <Checkbox {...restProps} />
 }
 
 Form.FacebookLogin = function FormFacebookLogin({ children, ...restProps }) {

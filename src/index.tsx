@@ -4,13 +4,13 @@ import App from './App';
 import { GlobalStyles } from "./global-styles";
 import "normalize.css";
 import { firebase } from "./firebase/firebase";
-import { FirebaseContext } from "./context/firebase"
-
+import { FirebaseAuthProvider } from './helpers/firebaseAuth';
 
 ReactDOM.render(
-  <FirebaseContext.Provider value={firebase}>
+  firebase &&
+  <FirebaseAuthProvider>
     <GlobalStyles />
     <App />
-  </FirebaseContext.Provider>,
+  </FirebaseAuthProvider>,
   document.getElementById('root')
 )

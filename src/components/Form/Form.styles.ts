@@ -102,7 +102,7 @@ export const RememberMe = styled.div`
     }
 `
 
-export const RememberMeCheckbox = styled.input`
+export const Checkbox = styled.input`
     position: absolute;
     z-index: -1;
     opacity: 0;
