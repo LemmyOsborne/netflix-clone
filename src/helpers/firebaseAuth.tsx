@@ -1,9 +1,9 @@
 import { getAuth, onAuthStateChanged, User } from "firebase/auth";
 import React, { useEffect, useState } from "react";
-import { FirebaseAuthContext } from "../context/FirebaseAuthContext";
+import { FirebaseAuthContext } from "../context/firebase-auth";
 
 
-const FirebaseAuthProvider: React.FC = ({ children }) => {
+const FirebaseProvider: React.FC = ({ children }) => {
 
   const [user, setUser] = useState<User | null>(JSON.parse(`${localStorage.getItem("authUser")}`))
   
@@ -30,6 +30,4 @@ const FirebaseAuthProvider: React.FC = ({ children }) => {
   )
 }
 
-
-
-export { FirebaseAuthProvider }
+export { FirebaseProvider }
