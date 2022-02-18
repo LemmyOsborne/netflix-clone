@@ -7,6 +7,10 @@ export const Background = styled.div<{ src?: string }>`
   background: linear-gradient(to top,rgba(0,0,0,.8) 0,rgba(0,0,0,0) 60%,rgba(0,0,0,.8) 100%), 
   url(${({ src }) => (src ? `../images/misc/${src}.jpg` : '../images/misc/home-bg.jpg')}) top left / cover no-repeat;
   
+  &.changeBackground {
+          background: black;
+        }
+  
   @media (max-width: 700px) {
         &.changeBackground {
           background: black;

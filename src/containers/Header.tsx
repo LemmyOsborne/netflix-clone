@@ -5,11 +5,13 @@ import * as ROUTES from "../constants/routes";
 import logo from "../logo.svg";
 
 
-export const HeaderContainer: React.FC = ({ children }) => {
+export const HeaderContainer: React.FC<{bg?: "true" | "false"}> = ({ bg, children }) => {
   const { pathname } = useLocation()
+ 
+  // If user on sign in or browse pages we need to get rid of sign in button in header
 
-  return pathname !== ROUTES.SIGNIN ? (
-    <Header>
+  return pathname !== (ROUTES.SIGNIN && ROUTES.BROWSE) ? (
+    <Header bg={bg}>
       <Header.Frame>
         <Header.Logo to={ROUTES.HOME} src={logo} alt="Netflix" />
         <Header.ButtonLink to={ROUTES.SIGNIN}>Sign In</Header.ButtonLink>
@@ -17,7 +19,7 @@ export const HeaderContainer: React.FC = ({ children }) => {
       {children}
     </Header>
   ) : (
-    <Header bg="black">
+    <Header bg={bg}>
       <Header.Frame>
         <Header.Logo to={ROUTES.HOME} src={logo} alt="Netflix" />
       </Header.Frame>

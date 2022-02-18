@@ -9,10 +9,12 @@ interface HeaderComposition {
     Logo: React.FC<{ to: string, src: string, alt: string }>
 }
 
-export const Header: React.FC<{bg?: string}> & HeaderComposition = ({ bg, children, ...restProps }) => {
+export const Header: React.FC<{bg?: "true" | "false"}> & HeaderComposition = ({ bg, children, ...restProps }) => {
+
+    //if the bg prop is true, the header component will display the image as a background otherwise it will be black
 
     return (
-        <Background className={bg && "changeBackground"} {...restProps}>
+        <Background className={bg === "true" ? "changeBackground" : ""} {...restProps}>
             {children}
         </Background>
     ) 
