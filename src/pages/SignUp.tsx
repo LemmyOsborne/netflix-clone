@@ -48,11 +48,11 @@ export const SignUp: React.FC = () => {
                 id="firstNameInput"
                 onChange={({ target }) => setFirstName(target.value)}
               />
-              <Form.Label
+              <Form.Placeholder
                 htmlFor="firstNameInput"
               >
                 First name
-              </Form.Label>
+              </Form.Placeholder>
               {error && <Form.Error>{error}</Form.Error>}
             </Form.InputWrapper>
             <Form.InputWrapper>
@@ -63,11 +63,11 @@ export const SignUp: React.FC = () => {
                 type="email"
                 onChange={({ target }) => setEmailAddress(target.value)}
               />
-              <Form.Label
+              <Form.Placeholder
                 htmlFor="emailInput"
               >
                 Email or phone number
-              </Form.Label>
+              </Form.Placeholder>
             </Form.InputWrapper>
             <Form.InputWrapper>
               <Form.Input
@@ -76,11 +76,11 @@ export const SignUp: React.FC = () => {
                 type="password"
                 onChange={({ target }) => setPassword(target.value)}
               />
-              <Form.Label
+              <Form.Placeholder
                 htmlFor="passwordInput"
               >
                 Password
-              </Form.Label>
+              </Form.Placeholder>
             </Form.InputWrapper>
             <Form.Button disabled={isInvalid} type="submit">Sign In</Form.Button>
             <Form.RememberMe>

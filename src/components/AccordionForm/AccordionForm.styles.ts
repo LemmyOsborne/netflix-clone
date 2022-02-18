@@ -5,7 +5,7 @@ export const Container = styled.div<{direction: string}>`
   flex-direction: ${({ direction }) => direction};
   justify-content: center;
   height: 100%;
-  margin: 20px 0 4rem;
+  margin: 10px 0 4rem;
   flex-wrap: wrap;
 `
 
@@ -20,7 +20,7 @@ export const InputGroup = styled.div`
 `
 
 export const Input = styled.input`
-  max-width: 450px;
+  max-width: 500px;
   width: 100%;
   border: 0;
   padding: 10px;

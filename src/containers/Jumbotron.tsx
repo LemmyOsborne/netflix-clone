@@ -15,6 +15,10 @@ export const JumbotronContainer: React.FC = (): JSX.Element => {
           </Jumbotron.Pane>
           <Jumbotron.Pane>
             <Jumbotron.Image src={item.image} alt={item.alt} />
+            {item.title === "Watch everywhere."
+              ? <Jumbotron.Video src={item.video} autoPlay playsInline muted loop secondVideo="true"/>
+              : <Jumbotron.Video src={item.video} autoPlay playsInline muted loop />
+            }
           </Jumbotron.Pane>
         </Jumbotron>
       ))}

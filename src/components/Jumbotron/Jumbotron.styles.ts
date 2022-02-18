@@ -32,6 +32,7 @@ export const Container = styled.div`
 
 export const Pane = styled.div`
     width: 50%;
+    position: relative;
 
     @media (max-width: 1000px) {
         width: 100%;
@@ -63,4 +64,34 @@ export const SubTitle = styled.h2`
 export const Image = styled.img`
     max-width: 100%;
     height: auto;
+    position: relative;
+    z-index: 2
+`
+
+export const Video = styled.video`
+    width: 100%;
+    height: 100%;
+    max-width: 73%;
+    max-height: 54%;
+    position: absolute;
+    top: 21%;
+    left: 13%;
+
+    &.secondVideo {
+        width: 100%;
+        height: 100%;
+        max-width: 63%;
+        max-height: 47%;
+        position: absolute;
+        top: 34%;
+        left: 50%;
+        -webkit-transform: translate(-50%,-50%);
+        -moz-transform: translate(-50%,-50%);
+        -ms-transform: translate(-50%,-50%);
+        -o-transform: translate(-50%,-50%);
+        transform: translate(-50%,-50%);
+        object-fit: contain;
+        display: inline-block;
+        vertical-align: baseline;
+    }
 `

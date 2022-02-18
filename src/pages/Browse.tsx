@@ -7,7 +7,7 @@ export const Browse: React.FC = () => {
   const { films } = useContent("films")
 
   const slides = genreFilter({series, films})
-  console.log(slides)
+  
   return (
     <div>Browse</div>
   )

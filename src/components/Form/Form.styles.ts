@@ -57,7 +57,7 @@ export const Input = styled.input`
     width: 100%;
 `
 
-export const Label = styled.label`
+export const Placeholder = styled.label`
     position: absolute;
     top: 35%;
     left: 20px;

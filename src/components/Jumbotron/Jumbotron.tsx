@@ -1,5 +1,5 @@
-import React, { ReactNode } from "react";
-import { Inner, Container, Pane, Image, Title, SubTitle, Item } from "./Jumbotron.styles";
+import React from "react";
+import { Inner, Container, Pane, Image, Title, SubTitle, Item, Video } from "./Jumbotron.styles";
 
 
 interface JumbotronComposition {
@@ -8,6 +8,7 @@ interface JumbotronComposition {
     Title: React.FC<React.HTMLAttributes<HTMLHeadingElement>>
     SubTitle: React.FC<React.HTMLAttributes<HTMLHeadingElement>>
     Image: React.FC<React.ImgHTMLAttributes<HTMLImageElement>>
+    Video: React.FC<React.VideoHTMLAttributes<HTMLVideoElement> & {secondVideo?: "true"}>
 }
 
 
@@ -40,4 +41,8 @@ Jumbotron.SubTitle = ({ children, ...restProps }) => {
 
 Jumbotron.Image = ({ ...restProps }) => {
     return <Image {...restProps} />
+}
+
+Jumbotron.Video = ({ secondVideo,...restProps }) => {
+    return <Video className={secondVideo && "secondVideo"} {...restProps} />
 }

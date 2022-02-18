@@ -43,11 +43,11 @@ export const SignIn: React.FC = () => {
                                 type="email"
                                 onChange={({ target }) => setEmailAddress(target.value)}
                             />
-                            <Form.Label
+                            <Form.Placeholder
                                 htmlFor="emailInput"
                             >
                                 Email or phone number
-                            </Form.Label>
+                            </Form.Placeholder>
                         </Form.InputWrapper>
                         <Form.InputWrapper>
                             <Form.Input
@@ -56,11 +56,11 @@ export const SignIn: React.FC = () => {
                                 type="password"
                                 onChange={({ target }) => setPassword(target.value)}
                             />
-                            <Form.Label
+                            <Form.Placeholder
                                 htmlFor="passwordInput"
                             >
                                 Password
-                            </Form.Label>
+                            </Form.Placeholder>
                             {error && <Form.Error>User with this email or password doesn't exist.</Form.Error>}
                         </Form.InputWrapper>
                         <Form.Button disabled={isInvalid} type="submit">Sign In</Form.Button>

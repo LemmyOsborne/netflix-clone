@@ -21,9 +21,11 @@ AccordionForm.InputGroup = function AccordionFormInputGroup({ children, ...restP
     return <InputGroup {...restProps}>{children}</InputGroup>
 }
 
-AccordionForm.Input = function AccordionFormInput({ ...restProps }) {
-    return <Input {...restProps} />
+
+AccordionForm.Input = function AccordionFormInput({ value, ...restProps }) {
+    return <Input {...restProps}/>
 }
+
 
 AccordionForm.Button = function AccordionFormButton({ children, ...restProps }) {
     return (

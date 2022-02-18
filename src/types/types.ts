@@ -6,3 +6,8 @@ export interface IContent {
     slug: string
     title: string
 }
+
+export interface FormInputContext {
+    togglePlaceholder: boolean
+    setTogglePlaceholder: React.Dispatch<React.SetStateAction<boolean>>
+}
