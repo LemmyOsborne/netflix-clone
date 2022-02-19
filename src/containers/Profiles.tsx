@@ -8,7 +8,6 @@ interface IProfilesContainer {
 }
 
 export const ProfilesContainer: React.FC<IProfilesContainer> = ({ user, setProfile }) => {
-  console.log("user: ", user)
   return (
     <Profiles>
       <Profiles.Title>Who's watching?</Profiles.Title>

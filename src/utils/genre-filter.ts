@@ -1,11 +1,6 @@
-import { IContent } from "../types/types";
+import { IContent, ISlides } from "../types/types";
 
-interface ISelection extends IContent {
-    selectionTitle?: string
-    data?: ISelection[]
-}
-
-export function genreFilter({ series, films }: { series: ISelection[], films: ISelection[]}) {
+export function genreFilter({ series, films }: {series: IContent[], films: IContent[]}) {
     return {
       series: [
         { selectionTitle: 'Documentaries', data: series?.filter((item) => item.genre === 'documentaries') },

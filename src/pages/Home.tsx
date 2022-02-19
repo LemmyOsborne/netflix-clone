@@ -9,7 +9,7 @@ import { CtaForm, Feature } from "../components";
 export const Home: React.FC = () => {
     return (
         <>
-            <HeaderContainer>
+            <HeaderContainer bg={true}>
                 <Feature>
                     <Feature.Title>Unlimited movies, TV shows, and more.</Feature.Title>
                     <Feature.SubTitle>Watch anywhere. Cancel anytime.</Feature.SubTitle>

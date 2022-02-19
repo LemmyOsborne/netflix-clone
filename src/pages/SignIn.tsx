@@ -11,6 +11,7 @@ export const SignIn: React.FC = () => {
     const [emailAddress, setEmailAddress] = useState("")
     const [password, setPassword] = useState("")
     const [error, setError] = useState("")
+    const [isSubmitting, setIsSubmitting] = useState(false)
     const isInvalid = password === "" || emailAddress === ""
 
     const navigate = useNavigate()
@@ -63,7 +64,7 @@ export const SignIn: React.FC = () => {
                             </Form.Placeholder>
                             {error && <Form.Error>User with this email or password doesn't exist.</Form.Error>}
                         </Form.InputWrapper>
-                        <Form.Button disabled={isInvalid} type="submit">Sign In</Form.Button>
+                        <Form.Button onClick={() => setIsSubmitting(true)} disabled={isInvalid} type="submit">{isSubmitting ? "Submiting..." : "Sign In" }</Form.Button>
                         <Form.RememberMe>
                             <div>
                                 <Form.Checkbox type="checkbox" id="checkbox" />

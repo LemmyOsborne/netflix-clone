@@ -1,16 +1,15 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
 import { Header } from '../components';
 import * as ROUTES from "../constants/routes";
 import logo from "../logo.svg";
 
+interface IHeaderContainer {
+  bg?: boolean
+}
 
-export const HeaderContainer: React.FC<{bg?: "true" | "false"}> = ({ bg, children }) => {
-  const { pathname } = useLocation()
- 
-  // If user on sign in or browse pages we need to get rid of sign in button in header
+export const HeaderContainer: React.FC<IHeaderContainer> = ({ children, bg }) => {
 
-  return pathname !== (ROUTES.SIGNIN && ROUTES.BROWSE) ? (
+  return (
     <Header bg={bg}>
       <Header.Frame>
         <Header.Logo to={ROUTES.HOME} src={logo} alt="Netflix" />
@@ -18,12 +17,5 @@ export const HeaderContainer: React.FC<{bg?: "true" | "false"}> = ({ bg, childre
       </Header.Frame>
       {children}
     </Header>
-  ) : (
-    <Header bg={bg}>
-      <Header.Frame>
-        <Header.Logo to={ROUTES.HOME} src={logo} alt="Netflix" />
-      </Header.Frame>
-      {children}
-    </Header>
-  )
+  ) 
 }

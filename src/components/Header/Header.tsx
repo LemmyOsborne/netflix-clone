@@ -1,23 +1,38 @@
 import React from 'react';
 import { Link, LinkProps } from 'react-router-dom';
-import { Background, ButtonLink, Container, Logo, Text } from "./Header.styles";
+import { Background, ButtonLink, Container, Logo, Text, Menu, Feature, Title, PlayButton, Dropdown, Group, Picture, TextLink } from "./Header.styles";
 
-interface HeaderComposition {
+interface IHeaderComposition extends React.FC<IHeader> {
     Frame: React.FC<React.HTMLAttributes<HTMLDivElement>> 
-    Text?: React.FC<React.HTMLAttributes<HTMLParagraphElement>>
+    Feature: React.FC<React.HTMLAttributes<HTMLDivElement>> 
+    Title: React.FC<React.HTMLAttributes<HTMLHeadingElement>> 
+    Text: React.FC<React.HTMLAttributes<HTMLParagraphElement>>
+    PlayButton: React.FC<React.ButtonHTMLAttributes<HTMLButtonElement>>
     ButtonLink: React.FC<LinkProps>
     Logo: React.FC<{ to: string, src: string, alt: string }>
+    Menu: React.FC<React.HTMLAttributes<HTMLDivElement>> 
+    Dropdown: React.FC<React.HTMLAttributes<HTMLDivElement>> 
+    Group: React.FC<React.HTMLAttributes<HTMLDivElement>> 
+    Picture: React.FC<React.ImgHTMLAttributes<HTMLImageElement>> 
+    TextLink: React.FC<React.ButtonHTMLAttributes<HTMLButtonElement>>
 }
 
-export const Header: React.FC<{bg?: "true" | "false"}> & HeaderComposition = ({ bg, children, ...restProps }) => {
+interface IHeader {
+    hideOnSmallScreen?: boolean
+    src?: string
+    bg?: boolean
+    children: any 
+}
 
-    //if the bg prop is true, the header component will display the image as a background otherwise it will be black
+export const Header: IHeaderComposition = ({ src, bg, hideOnSmallScreen = false, children, ...restProps }) => {
 
-    return (
-        <Background className={bg === "true" ? "changeBackground" : ""} {...restProps}>
+    //If the hideOnSmallScreen prop is true, the header component will display the image as a background otherwise it will be black
+
+    return bg ? ( 
+        <Background src={src}  {...restProps}>
             {children}
         </Background>
-    ) 
+    ) : children
 }
 
 
@@ -33,10 +48,43 @@ Header.Logo = function HeaderLogo({ to, children, ...restProps }) {
     )
 }
 
+Header.Feature = function HeaderFeature({ children, ...restProps }) {
+    return <Feature {...restProps}>{children}</Feature>
+}
+
 Header.Text = function HeaderText({ children, ...restProps }) {
     return <Text {...restProps}>{children}</Text>
+}
+
+Header.Title = function HeaderTitle({ children, ...restProps }) {
+    return <Title {...restProps}>{children}</Title>
 }
 
 Header.ButtonLink = function HeaderButtonLink({ children, ...restProps }) {
     return <ButtonLink {...restProps}>{children}</ButtonLink>
 }
+
+Header.Menu = function HeaderMenu({ children, ...restProps }) {
+    return <Menu {...restProps}>{children}</Menu>
+}
+
+Header.Dropdown = function HeaderDropdown({ children, ...restProps }) {
+    return <Dropdown {...restProps}>{children}</Dropdown>
+}
+
+Header.PlayButton = function HeaderPlayButton({ children, ...restProps }) {
+    return <PlayButton {...restProps}>{children}</PlayButton>
+}
+
+Header.Group = function HeaderGroup({ children, ...restProps }) {
+    return <Group {...restProps}>{children}</Group>
+}
+
+Header.Picture = function HeaderPicture({ ...restProps }) {
+    return <Picture {...restProps}/>
+}
+
+Header.TextLink = function HeaderTextLink({ children, ...restProps }) {
+    return <TextLink {...restProps}>{children}</TextLink>
+}
+

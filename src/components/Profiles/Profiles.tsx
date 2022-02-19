@@ -30,7 +30,6 @@ Profiles.User = function ProfilesUser({ children, ...restProps }) {
 }
 
 Profiles.ProfileImage = function ProfilesProfileImage({src, ...restProps }) {
-    console.log("src: ", src)
     return <ProfileImage {...restProps} src={src}/>
 }
 

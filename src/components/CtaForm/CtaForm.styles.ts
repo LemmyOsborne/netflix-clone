@@ -11,11 +11,11 @@ export const Container = styled.div<{direction: string}>`
 
 export const InputGroup = styled.div`
   display: flex;
-  align-items: center;
   justify-content: center;
 
   @media (max-width: 600px) {
     flex-direction: column;
+    align-items: center;
   }
 `
 
@@ -64,7 +64,7 @@ export const Button = styled.button`
   @media (max-width: 1000px) {
     font-size: 16px;
     font-weight: 500;
-    height: 40px;
+    height: 48px;
     min-width: 74px;
     padding: 0 16px;
   }
