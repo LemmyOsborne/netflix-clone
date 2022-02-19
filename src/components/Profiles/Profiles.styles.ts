@@ -17,6 +17,10 @@ export const Title = styled.h1`
     text-align: center;
     width: 100%;
     font-weight: 500;
+
+    @media (max-width: 600px) {
+        font-size: 35px;
+    }
 `
 
 export const List = styled.ul`
@@ -53,7 +57,7 @@ export const User = styled.li`
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 120px;
+    max-width: 150px;
 
     &:hover > ${ProfileImage} {
         border: 3px solid white;

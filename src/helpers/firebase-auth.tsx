@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { FirebaseAuthContext } from "../context/firebase-auth";
 
 
-const FirebaseProvider: React.FC = ({ children }) => {
+const FirebaseAuthProvider: React.FC = ({ children }) => {
 
   const [user, setUser] = useState<User | null>(JSON.parse(`${localStorage.getItem("authUser")}`))
   
@@ -30,4 +30,4 @@ const FirebaseProvider: React.FC = ({ children }) => {
   )
 }
 
-export { FirebaseProvider }
+export { FirebaseAuthProvider }

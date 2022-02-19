@@ -1,8 +1,8 @@
 export { Jumbotron } from "./Jumbotron/Jumbotron";
 export { Footer } from "./Footer/Footer";
 export { Accordion } from "./Accordion/Accordion";
-export { AccordionForm } from "./AccordionForm/AccordionForm";
+export { CtaForm } from "./CtaForm/CtaForm";
 export { Header } from "./Header/Header";
 export { Feature } from "./Feature/Feature";
 export { Form } from "./Form/Form";
-export { SelectProfile } from "./SelectProfile/SelectProfile";
+export { Profiles } from "./Profiles/Profiles";

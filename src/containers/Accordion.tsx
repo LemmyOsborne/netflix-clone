@@ -1,6 +1,6 @@
 import React from 'react';
 import { Accordion } from "../components";
-import { AccordionForm } from "../components";
+import { CtaForm } from "../components";
 import faqsData from "../fixtures/faqs.json";
 
 
@@ -17,11 +17,11 @@ export const AccordionContainer: React.FC = () => {
                 ))}
             </Accordion.Frame>
 
-            <AccordionForm direction="row">
-                <AccordionForm.Text>Ready to watch? Enter your email to create or restart your membership.</AccordionForm.Text>
-                <AccordionForm.Input placeholder="Email address" />
-                <AccordionForm.Button>Try it now</AccordionForm.Button>
-            </AccordionForm>
+            <CtaForm direction="row">
+                <CtaForm.Text>Ready to watch? Enter your email to create or restart your membership.</CtaForm.Text>
+                <CtaForm.Input placeholder="Email address" />
+                <CtaForm.Button>Try it now</CtaForm.Button>
+            </CtaForm>
         </Accordion>
     )
 }

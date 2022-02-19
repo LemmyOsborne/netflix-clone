@@ -11,3 +11,8 @@ export interface FormInputContext {
     togglePlaceholder: boolean
     setTogglePlaceholder: React.Dispatch<React.SetStateAction<boolean>>
 }
+
+export interface IProfile {
+    displayName: string | null | undefined
+    photoURL: string | null | undefined
+  }

@@ -1,15 +1,15 @@
 import React from 'react';
-import { Container, Input, Button, Text, InputGroup } from "./AccordionForm.styles";
+import { Container, Input, Button, Text, InputGroup } from "./CtaForm.styles";
 
 
-interface AccordionFormComposition {
+interface CtaFormComposition {
     Input: React.FC<React.InputHTMLAttributes<HTMLInputElement>>
     Button: React.FC<React.ButtonHTMLAttributes<HTMLButtonElement>>
     Text: React.FC<React.HTMLAttributes<HTMLDivElement>>
     InputGroup: React.FC<React.HTMLAttributes<HTMLDivElement>>
 }
 
-export const AccordionForm: React.FC<{ direction: string }> & AccordionFormComposition = ({ direction, children, ...restProps }) => {
+export const CtaForm: React.FC<{ direction: string }> & CtaFormComposition = ({ direction, children, ...restProps }) => {
     return (
         <Container direction={direction} {...restProps}>
             {children}
@@ -17,17 +17,17 @@ export const AccordionForm: React.FC<{ direction: string }> & AccordionFormCompo
     )
 }
 
-AccordionForm.InputGroup = function AccordionFormInputGroup({ children, ...restProps }) {
+CtaForm.InputGroup = function CtaFormInputGroup({ children, ...restProps }) {
     return <InputGroup {...restProps}>{children}</InputGroup>
 }
 
 
-AccordionForm.Input = function AccordionFormInput({ value, ...restProps }) {
+CtaForm.Input = function CtaFormInput({ value, ...restProps }) {
     return <Input {...restProps}/>
 }
 
 
-AccordionForm.Button = function AccordionFormButton({ children, ...restProps }) {
+CtaForm.Button = function CtaFormButton({ children, ...restProps }) {
     return (
         <Button {...restProps}>
             {children} <img src="/images/icons/chevron-right.png" alt="Try now" />
@@ -35,6 +35,6 @@ AccordionForm.Button = function AccordionFormButton({ children, ...restProps }) 
     )
 }
 
-AccordionForm.Text = function AccordionFormInput({ children, ...restProps }) {
+CtaForm.Text = function CtaFormInput({ children, ...restProps }) {
     return <Text {...restProps}>{children}</Text>
 }
