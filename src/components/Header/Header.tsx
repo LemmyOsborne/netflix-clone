@@ -1,13 +1,12 @@
 import React, { SetStateAction, useState } from 'react';
 import { Link, LinkProps } from 'react-router-dom';
-import { Background, ButtonLink, Container, Logo, Text, Menu, Feature, Title, PlayButton, Dropdown, Group, Picture, TextLink, Search, SearchIcon, SearchIpnut } from "./Header.styles";
+import { Background, ButtonLink, Container, Logo, Text, Menu, Feature, Title, Dropdown, Group, Picture, TextLink, Search, SearchIcon, SearchIpnut } from "./Header.styles";
 
 interface IHeaderComposition extends React.FC<IHeader> {
     Frame: React.FC<React.HTMLAttributes<HTMLDivElement>>
     Feature: React.FC<React.HTMLAttributes<HTMLDivElement>>
     Title: React.FC<React.HTMLAttributes<HTMLHeadingElement>>
     Text: React.FC<React.HTMLAttributes<HTMLParagraphElement>>
-    PlayButton: React.FC<React.ButtonHTMLAttributes<HTMLButtonElement>>
     ButtonLink: React.FC<LinkProps>
     Logo: React.FC<{ to: string, src: string, alt: string }>
     Menu: React.FC<React.HTMLAttributes<HTMLDivElement>>
@@ -89,10 +88,6 @@ Header.Search = function HeaderSearch({ searchTerm, setSearchTerm, ...restProps 
 
 Header.Dropdown = function HeaderDropdown({ children, ...restProps }) {
     return <Dropdown {...restProps}>{children}</Dropdown>
-}
-
-Header.PlayButton = function HeaderPlayButton({ children, ...restProps }) {
-    return <PlayButton {...restProps}>{children}</PlayButton>
 }
 
 Header.Group = function HeaderGroup({ children, ...restProps }) {

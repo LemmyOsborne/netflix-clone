@@ -1,14 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import { ProfilesContainer } from './Profiles';
-import { HeaderContainer } from '../containers/Header';
+import { HeaderContainer } from './Header';
 import { useFirebaseAuth, useWindowSize } from "../hooks";
 import { IRow, IProfile, ISlides } from "../types/types";
-import { Loading } from "../components/Loading/Loading";
-import { Header } from "../components";
+import { Loading, Card, Player, Header } from "../components";
 import * as ROUTES from "../constants/routes";
 import logo from "../logo.svg";
 import { getAuth, signOut } from "firebase/auth";
-import { Card } from "../components/Card/Card";
+import { FooterContainer } from "./Footer";
 
 
 
@@ -93,7 +92,10 @@ export const BrowseContainer: React.FC<{ slides: ISlides }> = ({ slides }) => {
             Among the refugees of this struggle is Cirilla, the Princess of Cintra, one of Nilfgaard's victims.
             She and Geralt share a destiny. Meanwhile, another figure looms large in Geralt's adventures: Yennefer, a sorceress.
           </Header.Text>
-          <Header.PlayButton>Play</Header.PlayButton>
+          <Player>
+            <Player.Video src="/videos/trailers/witcher.mp4"/>
+            <Player.Button>Play</Player.Button>
+          </Player>
         </Header.Feature>
       </Header>
 
@@ -112,10 +114,16 @@ export const BrowseContainer: React.FC<{ slides: ISlides }> = ({ slides }) => {
                 </Card.Item>
               ))}
             </Card.Row>
-            <Card.Feature category={category}/>
+            <Card.Feature category={category}>
+              <Player>
+                <Player.Video src="/videos/trailers/witcher.mp4" />
+                <Player.Button>Play</Player.Button>
+              </Player>
+            </Card.Feature>
           </Card>
         ))}
       </Card.Group>
+      <FooterContainer/>
     </>
   ) : (
     <>
