@@ -22,7 +22,7 @@ export const Background = styled.div<{ src?: string, hideOnSmallScreen?: boolean
 
 export const Container = styled.div`
   display: flex;
-  margin: 0 26px;
+  padding: 0 35px;
   height: 75px;
   justify-content: space-between;
   align-items: center;
@@ -30,7 +30,7 @@ export const Container = styled.div`
   a {
     display: flex;
   }
-  
+
   @media (max-width: 1000px) {
     margin: 0 20px;
   }
@@ -54,7 +54,7 @@ export const ButtonLink = styled(Link)`
   }
 `
 export const Feature = styled.div`
-  padding: 10rem 26px 0;
+  padding: 10rem 35px 0;
   flex-direction: column;
   align-items: normal;
   min-width: 430px;
@@ -116,23 +116,25 @@ export const Logo = styled.img`
     width: 75px;
   }
 `
-export const Group = styled.div`
-  display: flex;
-  width: 100%;
-  margin: 10px 0;
-`
 
-export const TextLink = styled.button`
+export const TextLink = styled.button<{active?: boolean}>`
   background: none;
   color: white;
   border: none;
-  font-weight: 500;
-  cursor: pointer;
+  font-weight: ${({ active }) => active ? 600 : 500};
   transition: font-weight .33s ease;
+  cursor: pointer;
+
 
   &:hover {
-  font-weight: 600;
-}
+    font-weight: 600;
+  }
+`
+export const Group = styled.div`
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 10px 0;
 `
 
 export const Picture = styled.img`
@@ -142,29 +144,30 @@ export const Picture = styled.img`
 
 export const Dropdown = styled.div`
   position: absolute;
-  top: 15px;
-  right: 52px;
+  top: 57.5px;
+  right: 70px;
   display: none;
   background-color: black;
   padding: 10px;
   width: 130px;
   height: 100px;
+  cursor: default;
  
-  img {
-    width: 20px;
-    height: 20px;
+  ${Picture} {
+    cursor: default;
+    width: 30px;
+    height: 30px;
     margin: 0 4px;
   }
 
   @media (max-width: 1000px) {
-    right: 42px;
+    right: 60px;
   }
 `
 export const Menu = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 70px;
   cursor: pointer;
 
   &:hover > ${Dropdown} {
@@ -172,4 +175,40 @@ export const Menu = styled.div`
     flex-direction: column;
     align-items: baseline;
     }
+`
+
+export const Search = styled.div`
+  display: flex;
+`
+
+export const SearchIpnut = styled.input<{active: boolean}>`
+  border: none;
+  outline: none;
+  background-color: rgba(64, 64, 64, 0.5);
+  color: white;
+  border: 1px solid white;
+  transition: width 0.5s, background-color 0.3s;
+  height: 30px;
+  font-size: 14px;
+  border-radius: 4px;
+  width: ${({ active }) => active ? "200px" : "0px"};
+  padding: ${({ active }) => active ? "0 10px" : "0px"};
+  margin-right: ${({ active }) => active ? "10px" : "0px"};
+  opacity: ${({ active }) => active ? "1" : "0"};
+
+  &:focus {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+`
+
+export const SearchIcon = styled.button`
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin-right: 10px;
+
+  img {
+    filter: brightness(0) invert(1);
+    width: 20px;
+  }
 `

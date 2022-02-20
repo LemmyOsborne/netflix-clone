@@ -1,20 +1,20 @@
 import { IContent, ISlides } from "../types/types";
 
-export function genreFilter({ series, films }: {series: IContent[], films: IContent[]}) {
+export function genreFilter({ series, films }: {series: IContent[], films: IContent[]}): ISlides {
     return {
       series: [
-        { selectionTitle: 'Documentaries', data: series?.filter((item) => item.genre === 'documentaries') },
-        { selectionTitle: 'Comedies', data: series?.filter((item) => item.genre === 'comedies') },
-        { selectionTitle: 'Children', data: series?.filter((item) => item.genre === 'children') },
-        { selectionTitle: 'Crime', data: series?.filter((item) => item.genre === 'crime') },
-        { selectionTitle: 'Feel Good', data: series?.filter((item) => item.genre === 'feel-good') },
+        { rowTitle: 'Documentaries', data: series?.filter((item) => item.genre === 'documentaries') },
+        { rowTitle: 'Comedies', data: series?.filter((item) => item.genre === 'comedies') },
+        { rowTitle: 'Children', data: series?.filter((item) => item.genre === 'children') },
+        { rowTitle: 'Crime', data: series?.filter((item) => item.genre === 'crime') },
+        { rowTitle: 'Feel Good', data: series?.filter((item) => item.genre === 'feel-good') },
       ],
       films: [
-        { selectionTitle: 'Drama', data: films?.filter((item) => item.genre === 'drama') },
-        { selectionTitle: 'Thriller', data: films?.filter((item) => item.genre === 'thriller') },
-        { selectionTitle: 'Children', data: films?.filter((item) => item.genre === 'children') },
-        { selectionTitle: 'Suspense', data: films?.filter((item) => item.genre === 'suspense') },
-        { selectionTitle: 'Romance', data: films?.filter((item) => item.genre === 'romance') },
+        { rowTitle: 'Drama', data: films?.filter((item) => item.genre === 'drama') },
+        { rowTitle: 'Thriller', data: films?.filter((item) => item.genre === 'thriller') },
+        { rowTitle: 'Children', data: films?.filter((item) => item.genre === 'children') },
+        { rowTitle: 'Suspense', data: films?.filter((item) => item.genre === 'suspense') },
+        { rowTitle: 'Romance', data: films?.filter((item) => item.genre === 'romance') },
       ],
     };
   }

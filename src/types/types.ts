@@ -17,12 +17,12 @@ export interface IProfile {
     photoURL: string | null | undefined
   }
 
-export interface ISelection {
-    selectionTitle?: string
+export interface IRow {
+    rowTitle?: string
     data?: IContent[]
 }
 
 export interface ISlides {
-    series: ISelection[]
-    films: ISelection[]
+    series: IRow[]
+    films: IRow[]
 }

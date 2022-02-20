@@ -1,34 +1,35 @@
-import React from 'react';
+import React, { SetStateAction, useState } from 'react';
 import { Link, LinkProps } from 'react-router-dom';
-import { Background, ButtonLink, Container, Logo, Text, Menu, Feature, Title, PlayButton, Dropdown, Group, Picture, TextLink } from "./Header.styles";
+import { Background, ButtonLink, Container, Logo, Text, Menu, Feature, Title, PlayButton, Dropdown, Group, Picture, TextLink, Search, SearchIcon, SearchIpnut } from "./Header.styles";
 
 interface IHeaderComposition extends React.FC<IHeader> {
-    Frame: React.FC<React.HTMLAttributes<HTMLDivElement>> 
-    Feature: React.FC<React.HTMLAttributes<HTMLDivElement>> 
-    Title: React.FC<React.HTMLAttributes<HTMLHeadingElement>> 
+    Frame: React.FC<React.HTMLAttributes<HTMLDivElement>>
+    Feature: React.FC<React.HTMLAttributes<HTMLDivElement>>
+    Title: React.FC<React.HTMLAttributes<HTMLHeadingElement>>
     Text: React.FC<React.HTMLAttributes<HTMLParagraphElement>>
     PlayButton: React.FC<React.ButtonHTMLAttributes<HTMLButtonElement>>
     ButtonLink: React.FC<LinkProps>
     Logo: React.FC<{ to: string, src: string, alt: string }>
-    Menu: React.FC<React.HTMLAttributes<HTMLDivElement>> 
-    Dropdown: React.FC<React.HTMLAttributes<HTMLDivElement>> 
-    Group: React.FC<React.HTMLAttributes<HTMLDivElement>> 
-    Picture: React.FC<React.ImgHTMLAttributes<HTMLImageElement>> 
-    TextLink: React.FC<React.ButtonHTMLAttributes<HTMLButtonElement>>
+    Menu: React.FC<React.HTMLAttributes<HTMLDivElement>>
+    Search: React.FC<React.HTMLAttributes<HTMLDivElement> & { searchTerm: string, setSearchTerm: React.Dispatch<SetStateAction<string>> }>
+    Dropdown: React.FC<React.HTMLAttributes<HTMLDivElement>>
+    Group: React.FC<React.HTMLAttributes<HTMLDivElement>>
+    Picture: React.FC<React.ImgHTMLAttributes<HTMLImageElement>>
+    TextLink: React.FC<React.ButtonHTMLAttributes<HTMLButtonElement> & {active?: boolean}>
 }
 
 interface IHeader {
     hideOnSmallScreen?: boolean
     src?: string
     bg?: boolean
-    children: any 
+    children: any
 }
 
 export const Header: IHeaderComposition = ({ src, bg, hideOnSmallScreen = false, children, ...restProps }) => {
 
     //If the hideOnSmallScreen prop is true, the header component will display the image as a background otherwise it will be black
 
-    return bg ? ( 
+    return bg ? (
         <Background src={src}  {...restProps}>
             {children}
         </Background>
@@ -68,6 +69,24 @@ Header.Menu = function HeaderMenu({ children, ...restProps }) {
     return <Menu {...restProps}>{children}</Menu>
 }
 
+Header.Search = function HeaderSearch({ searchTerm, setSearchTerm, ...restProps }) {
+    const [isSearchActive, setIsSearchActive] = useState(false)
+
+    return (
+        <Search {...restProps}>
+            <SearchIcon onClick={() => setIsSearchActive(isSearchActive => !isSearchActive)}>
+                <img src="images/icons/search.png" alt="Search" />
+            </SearchIcon>
+            <SearchIpnut
+                active={isSearchActive}
+                value={searchTerm}
+                onChange={({ target }) => setSearchTerm(target.value)}
+                placeholder="Search films and series"
+            />
+        </Search>
+    )
+}
+
 Header.Dropdown = function HeaderDropdown({ children, ...restProps }) {
     return <Dropdown {...restProps}>{children}</Dropdown>
 }
@@ -81,10 +100,10 @@ Header.Group = function HeaderGroup({ children, ...restProps }) {
 }
 
 Header.Picture = function HeaderPicture({ ...restProps }) {
-    return <Picture {...restProps}/>
+    return <Picture {...restProps} />
 }
 
-Header.TextLink = function HeaderTextLink({ children, ...restProps }) {
-    return <TextLink {...restProps}>{children}</TextLink>
+Header.TextLink = function HeaderTextLink({ active, children, ...restProps }) {
+    return <TextLink active={active} {...restProps}>{children}</TextLink>
 }
 

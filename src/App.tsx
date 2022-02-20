@@ -22,7 +22,7 @@ const App: React.FC = () => {
 
     <Router>
       <Routes>
-        <Route path={ROUTES.HOME} element={<Home />} />
+        <Route path={ROUTES.HOME} element={<WithRedirectAuthUser user={user}><Home /></WithRedirectAuthUser>} />
         <Route path={ROUTES.SIGNIN} element={<WithRedirectAuthUser user={user}><SignIn /></WithRedirectAuthUser>} />
         <Route path={ROUTES.SIGNUP} element={<WithRedirectAuthUser user={user}><SignUp /></WithRedirectAuthUser>} />
         <Route path={ROUTES.BROWSE} element={<RequireAuth user={user}><Browse /></RequireAuth>} />

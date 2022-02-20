@@ -2,18 +2,23 @@ import React, { useEffect, useRef, useState } from "react";
 import { ProfilesContainer } from './Profiles';
 import { HeaderContainer } from '../containers/Header';
 import { useFirebaseAuth, useWindowSize } from "../hooks";
-import { IProfile, ISlides } from "../types/types";
+import { IRow, IProfile, ISlides } from "../types/types";
 import { Loading } from "../components/Loading/Loading";
 import { Header } from "../components";
 import * as ROUTES from "../constants/routes";
 import logo from "../logo.svg";
 import { getAuth, signOut } from "firebase/auth";
+import { Card } from "../components/Card/Card";
+
 
 
 export const BrowseContainer: React.FC<{ slides: ISlides }> = ({ slides }) => {
   const user = useFirebaseAuth()
   const [profile, setProfile] = useState<IProfile>({} as IProfile)
   const [loading, setLoading] = useState(true)
+  const [searchTerm, setSearchTerm] = useState("")
+  const [category, setCategory] = useState("series")
+  const [slidesRow, setSlidesRow] = useState<IRow[]>([])
 
   //If window width smaller than 1270px change the background image to small
   const { width } = useWindowSize()
@@ -38,10 +43,14 @@ export const BrowseContainer: React.FC<{ slides: ISlides }> = ({ slides }) => {
   const signOutHandler = () => {
     const auth = getAuth();
     signOut(auth)
-    .catch((error) => {
+      .catch((error) => {
         console.log(error.message)
-    })
-}
+      })
+  }
+
+  useEffect(() => {
+    setSlidesRow((slides as any)[category])
+  })
 
   return profile?.displayName ? (
     <>
@@ -50,9 +59,14 @@ export const BrowseContainer: React.FC<{ slides: ISlides }> = ({ slides }) => {
         <Header.Frame>
           <Header.Group>
             <Header.Logo to={ROUTES.HOME} src={logo} alt="Netflix" />
-            <Header.TextLink>Series</Header.TextLink>
-            <Header.TextLink>Films</Header.TextLink>
+            <Header.TextLink active={category === "series" ? true : false} onClick={() => setCategory("series")}>
+              Series
+            </Header.TextLink>
+            <Header.TextLink active={category === "films" ? true : false} onClick={() => setCategory("films")}>
+              Films
+            </Header.TextLink>
           </Header.Group>
+          <Header.Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
           {user?.photoURL
             ? <Header.Menu>
               <Header.Picture src={`/images/users/${user?.photoURL}.png`} alt="Menu" />
@@ -70,6 +84,7 @@ export const BrowseContainer: React.FC<{ slides: ISlides }> = ({ slides }) => {
           }
 
         </Header.Frame>
+
         <Header.Feature>
           <Header.Title>Watch Witcher Now</Header.Title>
           <Header.Text>
@@ -81,6 +96,26 @@ export const BrowseContainer: React.FC<{ slides: ISlides }> = ({ slides }) => {
           <Header.PlayButton>Play</Header.PlayButton>
         </Header.Feature>
       </Header>
+
+      <Card.Group>
+        {slidesRow.map((slideItem) => (
+          <Card key={`${category} - ${slideItem.rowTitle?.toLowerCase()}`}>
+            <Card.Title>{slideItem.rowTitle}</Card.Title>
+            <Card.Row>
+              {slideItem?.data?.map((item) => (
+                <Card.Item key={item.id} item={item}>
+                  <Card.Image src={`/images/${category}/${item.genre}/${item.slug}/small.jpg`} />
+                  <Card.Meta>
+                    <Card.Subtitle>{item.title}</Card.Subtitle>
+                    <Card.Text>{item.description}</Card.Text>
+                  </Card.Meta>
+                </Card.Item>
+              ))}
+            </Card.Row>
+            <Card.Feature category={category}/>
+          </Card>
+        ))}
+      </Card.Group>
     </>
   ) : (
     <>
