@@ -1,6 +1,6 @@
 import React, { createContext, ReactNode, useContext, useState } from 'react';
 import { IContent } from '../../types/types';
-import { Container, Row, Image, Group, Title, Item, Meta, Subtitle, Text, Feature, FeatureText, FeatureTitle, Maturity, FeatureClose, Content } from "./Card.styles"
+import { Container, Row, Image, Group, Title, Item, Meta, Subtitle, Text, Feature, FeatureText, FeatureTitle, Maturity, FeatureClose, Content, MaturityWrapper } from "./Card.styles"
 
 
 interface CardComposition extends React.FC<{ children: ReactNode }> {
@@ -79,7 +79,7 @@ Card.Text = function CardText({ children, ...restProps }) {
     return <Text {...restProps}>{children}</Text>
 }
 
-Card.Feature = function CardFeature({ category, ...restProps }) {
+Card.Feature = function CardFeature({ category, children, ...restProps }) {
     const { itemFeature, showFeature, setShowFeature } = useContext(FeatureContext)
 
     return showFeature ? (
@@ -87,10 +87,13 @@ Card.Feature = function CardFeature({ category, ...restProps }) {
             <Content>
                 <FeatureTitle>{itemFeature.title}</FeatureTitle>
                 <FeatureText>{itemFeature.description}</FeatureText>
-                <Maturity rating={itemFeature.maturity}>{itemFeature.maturity < "12" ? "PG" : itemFeature.maturity}</Maturity>
-                <FeatureText fontWeight="600">{itemFeature.genre}</FeatureText>
+                <MaturityWrapper>
+                    <Maturity rating={itemFeature.maturity}>{itemFeature.maturity < "12" ? "PG" : itemFeature.maturity}</Maturity>
+                    <FeatureText fontWeight="600">{itemFeature.genre.charAt(0).toUpperCase() + itemFeature.genre.slice(1)}</FeatureText>
+                </MaturityWrapper>
+                {children}
             </Content>
-            <FeatureClose>
+            <FeatureClose onClick={() => setShowFeature(false)}>
                 <img src="/images/icons/close.png" alt="Close" />
             </FeatureClose>
         </Feature>

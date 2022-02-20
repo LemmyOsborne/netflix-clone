@@ -50,7 +50,7 @@ export const BrowseContainer: React.FC<{ slides: ISlides }> = ({ slides }) => {
 
   useEffect(() => {
     setSlidesRow((slides as any)[category])
-  })
+  }, [slides, category])
 
   return profile?.displayName ? (
     <>

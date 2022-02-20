@@ -1,4 +1,3 @@
-import { url } from "inspector";
 import styled from "styled-components";
 
 export const Group = styled.section`
@@ -75,9 +74,11 @@ export const Image = styled.img`
 ` 
 
 export const Feature = styled.div<{src?: string}>`
+    display: flex;
+    justify-content: space-between;
     background-image: ${({ src }) => `url(${src});`};
     background-size: contain;
-    /* position: relative; */
+    position: relative;
     height: 360px;
     background-position-x: right;
     background-repeat: no-repeat;
@@ -85,14 +86,16 @@ export const Feature = styled.div<{src?: string}>`
 `
 
 export const FeatureTitle = styled.h1`
-    font-size: 20px;
+    font-size: 25px;
+    margin: 0;
     font-weight: 600;
     color: white;
 `
 
 export const FeatureText = styled.p<{ fontWeight?: string }>`
-    font-size: 16px;
+    font-size: 18px;
     font-weight: ${({ fontWeight }) => fontWeight ? fontWeight : 500};
+    color: white;
 `
 
 export const Maturity = styled.div<{rating: string}>`
@@ -105,9 +108,13 @@ export const Maturity = styled.div<{rating: string}>`
     font-size: 12px;
     font-weight: 600;
     color: white;
+    margin-right: 10px;
 `
 
 export const FeatureClose = styled.button`
+    position: absolute;
+    top: 20px;
+    right: 10px;
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -120,5 +127,11 @@ export const FeatureClose = styled.button`
 `
 
 export const Content = styled.div`
-    
+    max-width: 500px;
+    margin: 56px 0;
+`
+
+export const MaturityWrapper = styled.div`
+    display: flex;
+    align-items: center;
 `
