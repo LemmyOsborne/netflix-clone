@@ -3,11 +3,12 @@ import { ProfilesContainer } from './Profiles';
 import { HeaderContainer } from './Header';
 import { useFirebaseAuth, useWindowSize } from "../hooks";
 import { IRow, IProfile, ISlides } from "../types/types";
-import { Loading, Card, Player, Header } from "../components";
+import { Loading, Player, Header } from "../components";
 import * as ROUTES from "../constants/routes";
 import logo from "../logo.svg";
 import { getAuth, signOut } from "firebase/auth";
 import { FooterContainer } from "./Footer";
+import { CardContainer } from "./Card";
 
 
 
@@ -99,30 +100,8 @@ export const BrowseContainer: React.FC<{ slides: ISlides }> = ({ slides }) => {
         </Header.Feature>
       </Header>
 
-      <Card.Group>
-        {slidesRow.map((slideItem) => (
-          <Card key={`${category} - ${slideItem.rowTitle?.toLowerCase()}`}>
-            <Card.Title>{slideItem.rowTitle}</Card.Title>
-            <Card.Row>
-              {slideItem?.data?.map((item) => (
-                <Card.Item key={item.id} item={item}>
-                  <Card.Image src={`/images/${category}/${item.genre}/${item.slug}/small.jpg`} />
-                  <Card.Meta>
-                    <Card.Subtitle>{item.title}</Card.Subtitle>
-                    <Card.Text>{item.description}</Card.Text>
-                  </Card.Meta>
-                </Card.Item>
-              ))}
-            </Card.Row>
-            <Card.Feature category={category}>
-              <Player>
-                <Player.Video src="/videos/trailers/witcher.mp4" />
-                <Player.Button>Play</Player.Button>
-              </Player>
-            </Card.Feature>
-          </Card>
-        ))}
-      </Card.Group>
+      <CardContainer slidesRow={slidesRow} category={category} />
+      
       <FooterContainer/>
     </>
   ) : (

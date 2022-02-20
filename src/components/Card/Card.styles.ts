@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Group = styled.section`
+export const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -12,7 +12,7 @@ export const Row = styled.div`
     display: flex;
 `
 
-export const Container = styled.div`
+export const Container = styled.section`
     display: flex;
     flex-direction: column;
 `

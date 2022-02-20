@@ -1,10 +1,10 @@
 import React, { createContext, ReactNode, useContext, useState } from 'react';
 import { IContent } from '../../types/types';
-import { Container, Row, Image, Group, Title, Item, Meta, Subtitle, Text, Feature, FeatureText, FeatureTitle, Maturity, FeatureClose, Content, MaturityWrapper } from "./Card.styles"
+import { Container, Row, Image, Wrapper, Title, Item, Meta, Subtitle, Text, Feature, FeatureText, FeatureTitle, Maturity, FeatureClose, Content, MaturityWrapper } from "./Card.styles"
 
 
 interface CardComposition extends React.FC<{ children: ReactNode }> {
-    Group: React.FC<React.HTMLAttributes<HTMLDivElement>>
+    Wrapper: React.FC<React.HTMLAttributes<HTMLDivElement>>
     Row: React.FC<React.HTMLAttributes<HTMLDivElement>>
     Title: React.FC<React.HTMLAttributes<HTMLHeadingElement>>
     Item: React.FC<React.HTMLAttributes<HTMLDivElement> & { item: IContent }>
@@ -35,8 +35,8 @@ export const Card: CardComposition = ({ children }) => {
     )
 }
 
-Card.Group = function CardGroup({ children, ...restProps }) {
-    return <Group {...restProps}>{children}</Group>
+Card.Wrapper = function CardWrapper({ children, ...restProps }) {
+    return <Wrapper {...restProps}>{children}</Wrapper>
 }
 
 Card.Row = function CardRow({ children, ...restProps }) {
