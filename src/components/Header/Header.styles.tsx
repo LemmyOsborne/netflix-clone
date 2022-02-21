@@ -26,6 +26,7 @@ export const Container = styled.div`
   height: 75px;
   justify-content: space-between;
   align-items: center;
+  box-sizing: border-box;
 
   a {
     display: flex;
@@ -34,10 +35,6 @@ export const Container = styled.div`
   @media (max-width: 1000px) {
     padding: 0 15px;
   }
-
-  /* @media (max-width: 600px) {
-    font-size: 25px;
-  } */
 `
 
 export const ButtonLink = styled(Link)`
@@ -169,6 +166,10 @@ export const Menu = styled.div`
 
 export const Search = styled.div`
   display: flex;
+
+  @media (max-width: 900px) {
+    display: none;
+  }
 `
 
 export const SearchIpnut = styled.input<{active: boolean}>`
