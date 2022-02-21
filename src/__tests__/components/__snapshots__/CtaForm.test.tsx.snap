@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CtaFotm/> render <CtaForm/> 1`] = `
+<div
+  class="sc-ieecCq gAqVgf"
+  direction="row"
+>
+  <div
+    class="sc-dJjYzT kMOoSo"
+    data-testid="input-group"
+  >
+    <p
+      class="sc-kfPuZi eDHXs"
+    >
+      Ready to watch? Enter your email to create or restart your membership.
+    </p>
+    <input
+      class="sc-hGPBjI kHlctt"
+      placeholder="Email address"
+    />
+    <button
+      class="sc-dlVxhl hkoIhf"
+    >
+      Try it now
+       
+      <img
+        alt="Try now"
+        src="/images/icons/chevron-right.png"
+      />
+    </button>
+  </div>
+</div>
+`;
