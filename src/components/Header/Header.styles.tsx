@@ -131,8 +131,8 @@ export const Picture = styled.img`
 
 export const Dropdown = styled.div`
   position: absolute;
-  top: 57.5px;
-  right: 70px;
+  top: 58px;
+  right: 55px;
   display: none;
   background-color: black;
   padding: 10px;
@@ -148,7 +148,7 @@ export const Dropdown = styled.div`
   }
 
   @media (max-width: 1000px) {
-    right: 60px;
+    right: 30px;
   }
 `
 export const Menu = styled.div`

@@ -10,6 +10,7 @@ import { getAuth, signOut } from "firebase/auth";
 import { FooterContainer } from "./Footer";
 import { CardContainer } from "./Card";
 import Fuse from "fuse.js";
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -42,7 +43,7 @@ export const BrowseContainer: React.FC<{ slides: ISlides }> = ({ slides }) => {
 
   //Method to sign out user
   const signOutHandler = () => {
-    const auth = getAuth();
+    const auth = getAuth()
     signOut(auth)
       .catch((error) => {
         console.log(error.message)
@@ -106,15 +107,15 @@ export const BrowseContainer: React.FC<{ slides: ISlides }> = ({ slides }) => {
             She and Geralt share a destiny. Meanwhile, another figure looms large in Geralt's adventures: Yennefer, a sorceress.
           </Header.Text>
           <Player>
-            <Player.Video src="/videos/trailers/witcher.mp4"/>
+            <Player.Video src="/videos/trailers/witcher.mp4" />
             <Player.Button>Play</Player.Button>
           </Player>
         </Header.Feature>
       </Header>
 
       <CardContainer slideRows={slideRows} category={category} />
-      
-      <FooterContainer/>
+
+      <FooterContainer />
     </>
   ) : (
     <>

@@ -11,7 +11,7 @@ interface IRequireAuth {
 export const RequireAuth: React.FC<IRequireAuth> = ({ user, children }): JSX.Element => {
     const location = useLocation()
 
-    return user ? children : <Navigate to={ROUTES.SIGNIN} state={{ from: location }} />
+    return user ? children : <Navigate to={ROUTES.HOME} state={{ from: location }} />
 }
 
 export const WithRedirectAuthUser: React.FC<IRequireAuth> = ({ user, children }): JSX.Element => {
