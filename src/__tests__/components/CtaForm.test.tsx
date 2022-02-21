@@ -6,7 +6,7 @@ describe("<CtaFotm/>", () => {
     it("render <CtaForm/>", () => {
         const { container, getByText, getByPlaceholderText, getByTestId } = render(
             <CtaForm direction="row">
-                <CtaForm.InputGroup data-testId="input-group">
+                <CtaForm.InputGroup data-testid="input-group">
                     <CtaForm.Text>Ready to watch? Enter your email to create or restart your membership.</CtaForm.Text>
                     <CtaForm.Input placeholder="Email address" />
                     <CtaForm.Button>Try it now</CtaForm.Button>
