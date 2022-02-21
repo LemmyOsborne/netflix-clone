@@ -3,9 +3,13 @@ import { HeaderContainer } from '../containers/Header';
 import { FooterContainer } from '../containers/Footer';
 import { useState } from 'react';
 import * as ROUTES from "../constants/routes";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword, signInWithRedirect } from "firebase/auth";
 import { useNavigate } from 'react-router-dom';
 import { Form } from '../components';
+import { FacebookAuthProvider } from "firebase/auth";
+
+
+
 
 export const SignIn: React.FC = () => {
     const [emailAddress, setEmailAddress] = useState("")
@@ -29,6 +33,9 @@ export const SignIn: React.FC = () => {
             setError(error.message)
         }
     }, [auth, emailAddress, password, navigate])
+
+
+    const provider = new FacebookAuthProvider()
 
     return (
         <>
@@ -73,7 +80,7 @@ export const SignIn: React.FC = () => {
                             <span>Need help?</span>
                         </Form.RememberMe>
                     </Form.Base>
-                    <Form.FacebookLogin><img src="/images/icons/facebook.png" alt="Facebook Logo" />Login with Facebook</Form.FacebookLogin>
+                    <Form.FacebookLogin onClick={() => signInWithRedirect(auth, provider)}><img src="/images/icons/facebook.png" alt="Facebook Logo" />Login with Facebook</Form.FacebookLogin>
                     <Form.SignUpLink to={ROUTES.SIGNUP}><span>New to Netflix?</span>Sign up now.</Form.SignUpLink>
                     <Form.CaptchaText>This page is protected by Google reCAPTCHA to ensure you're not a bot.<span>Learn more.</span></Form.CaptchaText>
                 </Form>
