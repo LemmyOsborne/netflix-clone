@@ -16,7 +16,7 @@ export const Container = styled.div`
 export const Inner = styled.div`
     display: flex;
     flex-direction: column;
-    background-color: rgba(0, 0, 0, .75);
+    background-color: rgba(0, 0, 0, .85);
     max-width: 314px;
     padding: 60px 68px 160px;
     border-radius: 4px;
@@ -55,6 +55,7 @@ export const Input = styled.input`
     font-size: 16px;
     background-color: #333;
     width: 100%;
+    outline: none;
 `
 
 export const Placeholder = styled.label`
@@ -91,6 +92,10 @@ export const Button = styled.button`
     width: 100%;
     cursor: pointer;
     margin-top: 30px;
+
+    &:disabled {
+        opacity: 0.6
+    }
 `
 
 export const RememberMe = styled.div`
@@ -146,7 +151,7 @@ export const Checkbox = styled.input`
 `
 
 export const FacebookLogin = styled.a`
-    color: inherit;
+    color: #737373;
     text-decoration: none;
     font-size: 13px;
     display: flex;

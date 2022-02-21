@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { LinkProps } from 'react-router-dom';
 import { ToggleContext } from '../../context/togglePlaceHolder';
 import { Container, Inner, Checkbox, Title, Base, InputWrapper, Input, Placeholder, Button, RememberMe, FacebookLogin, SignUpLink, CaptchaText, Error } from "./Form.styles";
@@ -89,7 +89,7 @@ Form.RememberMe = function FormRememberMe({ children, ...restProps }) {
 }
 
 Form.Checkbox = function FormCheckbox({ ...restProps }) {
-    return <Checkbox {...restProps} />
+    return <Checkbox checked {...restProps} />
 }
 
 Form.FacebookLogin = function FormFacebookLogin({ children, ...restProps }) {
