@@ -62,7 +62,7 @@ export const SignIn: React.FC = () => {
                             >
                                 Password
                             </Form.Placeholder>
-                            {error && <Form.Error>User with this email or password doesn't exist.</Form.Error>}
+                            {error && <Form.Error>{error}</Form.Error>}
                         </Form.InputWrapper>
                         <Form.Button onClick={() => setIsSubmitting(true)} disabled={isInvalid} type="submit">{isSubmitting ? "Submiting..." : "Sign In" }</Form.Button>
                         <Form.RememberMe>

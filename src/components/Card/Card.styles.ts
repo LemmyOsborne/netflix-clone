@@ -55,26 +55,22 @@ export const Item = styled.div`
         z-index: 99;
 
         ${Meta}, ${Subtitle}, ${Text} {
-        display: block;
+            display: block;
         }
     }
 
     @media (max-width: 1200px) {
-        display: inline-flex;
-        width: fit-content;
-        margin: 0 60px 30px 0;
-
-        &:last-of-type {
-            margin: 0 30px 30px 0;
+        &:hover {
+            transform: none;
         }
-    }
+    } 
 `
 
 export const Row = styled.div`
     display: flex; 
     
     @media (max-width: 1200px) {
-        flex-wrap: wrap;
+        overflow-x: auto;
     } 
 `
 
@@ -86,12 +82,8 @@ export const Image = styled.img`
     padding: 0;
     margin: 0;
 
-    @media (max-width: 1000px) {
+    @media (max-width: 1200px) {
         width: 250px;
-    }
-
-    @media (max-width: 800px) {
-        width: 400px;
     }
 ` 
 
@@ -99,16 +91,14 @@ export const Feature = styled.div<{src?: string}>`
     display: flex;
     justify-content: space-between;
     background-image: ${({ src }) => `url(${src});`};
-    background-size: contain;
+    background-size: cover;
     position: relative;
-    height: 360px;
+    max-height: 360px;
     background-position-x: right;
     background-repeat: no-repeat;
     background-color: black;
+    padding-left: 20px;
 
-    @media (max-width: 1200px) {
-        display: none;
-    }
 `
 
 export const FeatureTitle = styled.h1`
@@ -117,7 +107,7 @@ export const FeatureTitle = styled.h1`
     font-weight: 600;
     color: white;
 
-    @media (max-width: 800px) {
+    @media (max-width: 900px) {
         font-size: 20px;
     }
 `
@@ -126,8 +116,9 @@ export const FeatureText = styled.p<{ fontWeight?: string }>`
     font-size: 18px;
     font-weight: ${({ fontWeight }) => fontWeight ? fontWeight : 500};
     color: white;
+    max-width: 300px;
 
-    @media (max-width: 800px) {
+    @media (max-width: 900px) {
         font-size: 14px;
     }
 `
