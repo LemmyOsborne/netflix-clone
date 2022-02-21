@@ -16,7 +16,7 @@ export const Background = styled.div<{ src?: string, hideOnSmallScreen?: boolean
   background-position: center;
 
     @media (max-width: 1100px) {
-      ${({ hideOnSmallScreen }) => hideOnSmallScreen && `background: none;`}
+      ${({ hideOnSmallScreen }) => hideOnSmallScreen && `background-image: none;`}
     }
 `
 
@@ -32,7 +32,7 @@ export const Container = styled.div`
   }
 
   @media (max-width: 1000px) {
-    margin: 0;
+    padding: 0 15px;
   }
 `
 

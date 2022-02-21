@@ -24,9 +24,9 @@ interface IHeader {
     children: any
 }
 
-export const Header: IHeaderComposition = ({ src, bg, hideOnSmallScreen = false, children, ...restProps }) => {
+export const Header: IHeaderComposition = ({ src, bg, children, ...restProps }) => {
 
-    //If the hideOnSmallScreen prop is true, the header component will display the image as a background otherwise it will be black
+    //If the bg prop is true, the header component will display the image as a background otherwise it will be black
 
     return bg ? (
         <Background src={src}  {...restProps}>

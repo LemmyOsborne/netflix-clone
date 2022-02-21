@@ -1,5 +1,8 @@
 import React from 'react';
 import { Container, Input, Button, Text, InputGroup } from "./CtaForm.styles";
+import * as ROUTES from "../../constants/routes";
+import { useNavigate } from "react-router-dom";
+
 
 
 interface CtaFormComposition {
@@ -28,8 +31,10 @@ CtaForm.Input = function CtaFormInput({ value, ...restProps }) {
 
 
 CtaForm.Button = function CtaFormButton({ children, ...restProps }) {
+    const navigate = useNavigate()
+
     return (
-        <Button {...restProps}>
+        <Button onClick={() => navigate(ROUTES.SIGNUP)} {...restProps}>
             {children} <img src="/images/icons/chevron-right.png" alt="Try now" />
         </Button>
     )

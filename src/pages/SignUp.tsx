@@ -37,7 +37,7 @@ export const SignUp: React.FC = () => {
 
   return (
     <>
-      <HeaderContainer bg={true}>
+      <HeaderContainer bg={true} hideOnSmallScreen>
         <Form>
           <Form.Title>Sign Up</Form.Title>
           <Form.Base onSubmit={handleSubmit} >

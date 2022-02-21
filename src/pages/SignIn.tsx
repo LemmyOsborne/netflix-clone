@@ -23,7 +23,7 @@ export const SignIn: React.FC = () => {
     const auth = getAuth()
     const handleSubmit = useCallback(async (e: FormEvent) => {
         e.preventDefault()
-        
+
         try {
             await signInWithEmailAndPassword(auth, emailAddress, password)
             navigate(ROUTES.BROWSE)
@@ -36,10 +36,20 @@ export const SignIn: React.FC = () => {
 
 
     const provider = new FacebookAuthProvider()
+    // const facebookSignInHandler = async () => {
+    //     try {
+    //         await 
+    //     } catch (error: any) {
+    //         setEmailAddress("")
+    //         setPassword("")
+    //         setError(error.message)
+    //     }
+        
+    // }
 
     return (
         <>
-            <HeaderContainer bg={true} showSignInButton={false}>
+            <HeaderContainer bg={true} showSignInButton={false} hideOnSmallScreen>
                 <Form>
                     <Form.Title>Sign In</Form.Title>
                     <Form.Base onSubmit={handleSubmit} >
@@ -71,7 +81,7 @@ export const SignIn: React.FC = () => {
                             </Form.Placeholder>
                             {error && <Form.Error>{error}</Form.Error>}
                         </Form.InputWrapper>
-                        <Form.Button onClick={() => setIsSubmitting(true)} disabled={isInvalid} type="submit">{isSubmitting ? "Submiting..." : "Sign In" }</Form.Button>
+                        <Form.Button onClick={() => setIsSubmitting(true)} disabled={isInvalid} type="submit">{isSubmitting ? "Submiting..." : "Sign In"}</Form.Button>
                         <Form.RememberMe>
                             <div>
                                 <Form.Checkbox type="checkbox" id="checkbox" />

@@ -7,6 +7,7 @@ import { CtaForm, Feature } from "../components";
 
 
 export const Home: React.FC = () => {
+
     return (
         <>
             <HeaderContainer bg={true}>
