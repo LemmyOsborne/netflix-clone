@@ -1,0 +1,128 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Footer/> render <Footer/> populated with data 1`] = `
+<div
+  class="sc-furwcr eYeOMZ"
+>
+  <p
+    class="sc-iqseJM iQdZkI"
+  >
+    Questions? Call 8-800-100-9668
+  </p>
+  <div
+    class="sc-jrQzAO bpvYT"
+  >
+    <div
+      class="sc-pVTFL hMtDZF"
+    >
+      <a
+        class="sc-kDTinF bJjkMl"
+        href="#"
+      >
+        FAQ
+      </a>
+      <a
+        class="sc-kDTinF bJjkMl"
+        href="#"
+      >
+        Investor Relations
+      </a>
+      <a
+        class="sc-kDTinF bJjkMl"
+        href="#"
+      >
+        Privacy
+      </a>
+      <a
+        class="sc-kDTinF bJjkMl"
+        href="#"
+      >
+        Speed Test
+      </a>
+    </div>
+    <div
+      class="sc-pVTFL hMtDZF"
+    >
+      <a
+        class="sc-kDTinF bJjkMl"
+        href="#"
+      >
+        Help Center
+      </a>
+      <a
+        class="sc-kDTinF bJjkMl"
+        href="#"
+      >
+        Jobs
+      </a>
+      <a
+        class="sc-kDTinF bJjkMl"
+        href="#"
+      >
+        Cookie Preferences
+      </a>
+      <a
+        class="sc-kDTinF bJjkMl"
+        href="#"
+      >
+        Legal Notices
+      </a>
+    </div>
+    <div
+      class="sc-pVTFL hMtDZF"
+    >
+      <a
+        class="sc-kDTinF bJjkMl"
+        href="#"
+      >
+        Account
+      </a>
+      <a
+        class="sc-kDTinF bJjkMl"
+        href="#"
+      >
+        Ways to Watch
+      </a>
+      <a
+        class="sc-kDTinF bJjkMl"
+        href="#"
+      >
+        Corporate Information
+      </a>
+      <a
+        class="sc-kDTinF bJjkMl"
+        href="#"
+      >
+        Only on Netflix
+      </a>
+    </div>
+    <div
+      class="sc-pVTFL hMtDZF"
+    >
+      <a
+        class="sc-kDTinF bJjkMl"
+        href="#"
+      >
+        Media center
+      </a>
+      <a
+        class="sc-kDTinF bJjkMl"
+        href="#"
+      >
+        Terms of Use
+      </a>
+      <a
+        class="sc-kDTinF bJjkMl"
+        href="#"
+      >
+        Contact Us
+      </a>
+    </div>
+  </div>
+  <p
+    class="sc-crHmcD gaFGOI"
+  >
+    Netflix Russia
+  </p>
+</div>
+`;
