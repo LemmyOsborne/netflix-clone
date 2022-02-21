@@ -82,7 +82,7 @@ Card.Text = function CardText({ children, ...restProps }) {
 Card.Feature = function CardFeature({ category, children, ...restProps }) {
     const { itemFeature, showFeature, setShowFeature } = useContext(FeatureContext)
 
-    return showFeature ? (
+    return showFeature  ? (
         <Feature {...restProps} src={`/images/${category}/${itemFeature.genre}/${itemFeature.slug}/large.jpg`}>
             <Content>
                 <FeatureTitle>{itemFeature.title}</FeatureTitle>

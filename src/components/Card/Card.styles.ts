@@ -8,10 +8,6 @@ export const Wrapper = styled.div`
     box-sizing: border-box;
 `
 
-export const Row = styled.div`
-    display: flex;
-`
-
 export const Container = styled.section`
     display: flex;
     flex-direction: column;
@@ -55,22 +51,48 @@ export const Item = styled.div`
     cursor: pointer;
 
     &:hover {
-        transform: scale(1.3);
+        transform: scale(1.1);
         z-index: 99;
 
         ${Meta}, ${Subtitle}, ${Text} {
         display: block;
+        }
     }
+
+    @media (max-width: 1200px) {
+        display: inline-flex;
+        width: fit-content;
+        margin: 0 60px 30px 0;
+
+        &:last-of-type {
+            margin: 0 30px 30px 0;
+        }
     }
+`
+
+export const Row = styled.div`
+    display: flex; 
+    
+    @media (max-width: 1200px) {
+        flex-wrap: wrap;
+    } 
 `
 
 export const Image = styled.img`
     border-radius: 4px;
     width: 100%;
     height: auto;
-    max-width: 305px;
+    max-width: 400px;
     padding: 0;
     margin: 0;
+
+    @media (max-width: 1000px) {
+        width: 250px;
+    }
+
+    @media (max-width: 800px) {
+        width: 400px;
+    }
 ` 
 
 export const Feature = styled.div<{src?: string}>`
@@ -83,6 +105,10 @@ export const Feature = styled.div<{src?: string}>`
     background-position-x: right;
     background-repeat: no-repeat;
     background-color: black;
+
+    @media (max-width: 1200px) {
+        display: none;
+    }
 `
 
 export const FeatureTitle = styled.h1`
@@ -90,12 +116,20 @@ export const FeatureTitle = styled.h1`
     margin: 0;
     font-weight: 600;
     color: white;
+
+    @media (max-width: 800px) {
+        font-size: 20px;
+    }
 `
 
 export const FeatureText = styled.p<{ fontWeight?: string }>`
     font-size: 18px;
     font-weight: ${({ fontWeight }) => fontWeight ? fontWeight : 500};
     color: white;
+
+    @media (max-width: 800px) {
+        font-size: 14px;
+    }
 `
 
 export const Maturity = styled.div<{rating: string}>`

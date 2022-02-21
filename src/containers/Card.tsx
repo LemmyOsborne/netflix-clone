@@ -1,16 +1,17 @@
+import React from "react";
 import { Card, Player } from "../components";
 import { IRow } from "../types/types";
 
 interface ICardContainer {
-    slidesRow: IRow[]
+    slideRows: IRow[]
     category: string
 }
 
-export const CardContainer: React.FC<ICardContainer> = ({ slidesRow, category }) => {
+export const CardContainer: React.FC<ICardContainer> = ({ slideRows, category }) => {
 
     return (
         <Card.Wrapper>
-            {slidesRow.map((slideItem) => (
+            {slideRows.map((slideItem) => (
                 <Card key={`${category} - ${slideItem.rowTitle?.toLowerCase()}`}>
                     <Card.Title>{slideItem.rowTitle}</Card.Title>
                     <Card.Row>
@@ -32,6 +33,6 @@ export const CardContainer: React.FC<ICardContainer> = ({ slidesRow, category })
                     </Card.Feature>
                 </Card>
             ))}
-        </Card.Wrapper>)
-
+        </Card.Wrapper>
+    ) 
 }

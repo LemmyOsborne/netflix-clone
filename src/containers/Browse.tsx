@@ -9,6 +9,7 @@ import logo from "../logo.svg";
 import { getAuth, signOut } from "firebase/auth";
 import { FooterContainer } from "./Footer";
 import { CardContainer } from "./Card";
+import Fuse from "fuse.js";
 
 
 
@@ -18,7 +19,7 @@ export const BrowseContainer: React.FC<{ slides: ISlides }> = ({ slides }) => {
   const [loading, setLoading] = useState(true)
   const [searchTerm, setSearchTerm] = useState("")
   const [category, setCategory] = useState("series")
-  const [slidesRow, setSlidesRow] = useState<IRow[]>([])
+  const [slideRows, setSlideRows] = useState<IRow[]>([])
 
   //If window width smaller than 1270px change the background image to small
   const { width } = useWindowSize()
@@ -49,8 +50,20 @@ export const BrowseContainer: React.FC<{ slides: ISlides }> = ({ slides }) => {
   }
 
   useEffect(() => {
-    setSlidesRow((slides as any)[category])
+    setSlideRows((slides as any)[category])
   }, [slides, category])
+
+  //Search with fuse js
+  useEffect(() => {
+    const fuse = new Fuse(slideRows, { keys: ['data.description', 'data.title', 'data.genre'] });
+    const results = fuse.search(searchTerm).map(({ item }) => item);
+
+    if (slideRows.length > 0 && searchTerm.length > 3 && results.length > 0) {
+      setSlideRows(results);
+    } else {
+      setSlideRows((slides as any)[category])
+    }
+  }, [searchTerm, category, slideRows, slides])
 
   return profile?.displayName ? (
     <>
@@ -82,7 +95,6 @@ export const BrowseContainer: React.FC<{ slides: ISlides }> = ({ slides }) => {
             </Header.Menu>
             : null
           }
-
         </Header.Frame>
 
         <Header.Feature>
@@ -100,7 +112,7 @@ export const BrowseContainer: React.FC<{ slides: ISlides }> = ({ slides }) => {
         </Header.Feature>
       </Header>
 
-      <CardContainer slidesRow={slidesRow} category={category} />
+      <CardContainer slideRows={slideRows} category={category} />
       
       <FooterContainer/>
     </>

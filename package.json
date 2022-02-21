@@ -25,7 +25,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --coverage --watchAll",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -44,6 +44,35 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
+    ]
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "<rootDir>/src/**/*.tsx",
+      "!<rootDir>/src/App.tsx",
+      "!<rootDir>/src/helpers/*.ts",
+      "!<rootDir>/src/firebase/firebase.ts",
+      "!<rootDir>/src/index.tsx",
+      "!<rootDir>/src/seed.ts",
+      "!<rootDir>/src/utils/genre-filter.ts",
+      "!<rootDir>/src/pages/index.ts",
+      "!<rootDir>/src/global-styles.ts",
+      "!<rootDir>/src/components/index.ts",
+      "!<rootDir>/src/hooks/*.ts",
+      "!<rootDir>/src/context/*.ts",
+      "!<rootDir>/src/types/types.ts"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 90,
+        "functions": 90,
+        "lines": 90,
+        "statements": 90
+      }
+    },
+    "coverageReporters": [
+      "html",
+      "text"
     ]
   },
   "devDependencies": {

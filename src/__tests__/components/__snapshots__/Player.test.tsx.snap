@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Player/> renders the <Player/> with Witcher trailer video 1`] = `
+<div
+  class="sc-jQrDum"
+>
+  <button
+    class="sc-GEbAx eTYOrQ"
+  >
+    Play
+  </button>
+</div>
+`;
