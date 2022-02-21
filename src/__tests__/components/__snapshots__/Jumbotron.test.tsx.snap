@@ -1,0 +1,162 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Jumbotron/> renders <Jumbotron/> 1`] = `
+<div
+  class="sc-dkPtRN lkZHQB"
+>
+  <div
+    class="sc-gsDKAQ kqnwkG"
+  >
+    <div
+      class="sc-bdvvtL fCTLQw"
+      direction="row"
+    >
+      <div
+        class="sc-hKwDye dMpiFr"
+      >
+        <h1
+          class="sc-eCImPb cBGUDK"
+        >
+          Enjoy on your TV.
+        </h1>
+        <h2
+          class="sc-jRQBWg ERdWH"
+        >
+          Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray players and more.
+        </h2>
+      </div>
+      <div
+        class="sc-hKwDye dMpiFr"
+      >
+        <img
+          alt="Watch TV with Netflix"
+          class="sc-gKclnd rpwtm"
+          src="/images/misc/home-tv.png"
+        />
+        <video
+          autoplay=""
+          class="sc-iCfMLu ktLYlZ"
+          loop=""
+          playsinline=""
+          src="/videos/misc/home-tv.m4v"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    class="sc-gsDKAQ kqnwkG"
+  >
+    <div
+      class="sc-bdvvtL jJajnp"
+      direction="row-reverse"
+    >
+      <div
+        class="sc-hKwDye dMpiFr"
+      >
+        <h1
+          class="sc-eCImPb cBGUDK"
+        >
+          Download your shows to watch offline.
+        </h1>
+        <h2
+          class="sc-jRQBWg ERdWH"
+        >
+          Save your favorites easily and always have something to watch.
+        </h2>
+      </div>
+      <div
+        class="sc-hKwDye dMpiFr"
+      >
+        <img
+          alt="Watch on mobile"
+          class="sc-gKclnd rpwtm"
+          src="/images/misc/home-mobile.jpg"
+        />
+        <video
+          autoplay=""
+          class="sc-iCfMLu ktLYlZ"
+          loop=""
+          playsinline=""
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    class="sc-gsDKAQ kqnwkG"
+  >
+    <div
+      class="sc-bdvvtL fCTLQw"
+      direction="row"
+    >
+      <div
+        class="sc-hKwDye dMpiFr"
+      >
+        <h1
+          class="sc-eCImPb cBGUDK"
+        >
+          Watch everywhere.
+        </h1>
+        <h2
+          class="sc-jRQBWg ERdWH"
+        >
+          Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV without paying more.
+        </h2>
+      </div>
+      <div
+        class="sc-hKwDye dMpiFr"
+      >
+        <img
+          alt="Ghost Busters on Netflix"
+          class="sc-gKclnd rpwtm"
+          src="/images/misc/home-imac.png"
+        />
+        <video
+          autoplay=""
+          class="sc-iCfMLu ktLYlZ secondVideo"
+          loop=""
+          playsinline=""
+          src="/videos/misc/home-imac.m4v"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    class="sc-gsDKAQ kqnwkG"
+  >
+    <div
+      class="sc-bdvvtL jJajnp"
+      direction="row-reverse"
+    >
+      <div
+        class="sc-hKwDye dMpiFr"
+      >
+        <h1
+          class="sc-eCImPb cBGUDK"
+        >
+          Create profiles for kids.
+        </h1>
+        <h2
+          class="sc-jRQBWg ERdWH"
+        >
+          Send kids on adventures with their favorite characters in a space made just for them—free with your membership.
+        </h2>
+      </div>
+      <div
+        class="sc-hKwDye dMpiFr"
+      >
+        <img
+          alt="Profile for kids on Netflix"
+          class="sc-gKclnd rpwtm"
+          src="/images/misc/home-kids.png"
+        />
+        <video
+          autoplay=""
+          class="sc-iCfMLu ktLYlZ"
+          loop=""
+          playsinline=""
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
