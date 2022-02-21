@@ -26,7 +26,7 @@ export const Container = styled.div`
   height: 75px;
   justify-content: space-between;
   align-items: center;
-  
+
   a {
     display: flex;
   }
@@ -34,6 +34,10 @@ export const Container = styled.div`
   @media (max-width: 1000px) {
     padding: 0 15px;
   }
+
+  /* @media (max-width: 600px) {
+    font-size: 25px;
+  } */
 `
 
 export const ButtonLink = styled(Link)`
@@ -57,9 +61,12 @@ export const Feature = styled.div`
   padding: 10rem 35px 0;
   flex-direction: column;
   align-items: normal;
-  min-width: 430px;
   width: 50%;
   height: 430px;
+
+  @media (max-width: 900px) {
+    width: 70%;
+  }
 `
 
 export const Title = styled.h1`
@@ -70,8 +77,12 @@ export const Title = styled.h1`
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);
   margin: 0;
 
-  @media (max-width: 900px) {
+  @media (max-width: 800px) {
     font-size: 33px;
+  }
+  
+  @media (max-width: 600px) {
+    font-size: 25px;
   }
 `
 
@@ -81,7 +92,7 @@ export const Text = styled.p`
   line-height: 1.4;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);
 
-  @media (max-width: 900px) {
+  @media (max-width: 800px) {
     font-size: 16px;
   }
 `
@@ -104,7 +115,6 @@ export const TextLink = styled.button<{active?: boolean}>`
   font-weight: ${({ active }) => active ? 600 : 500};
   transition: font-weight .33s ease;
   cursor: pointer;
-
 
   &:hover {
     font-weight: 600;
