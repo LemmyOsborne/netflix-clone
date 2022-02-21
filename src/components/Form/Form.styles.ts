@@ -56,6 +56,12 @@ export const Input = styled.input`
     background-color: #333;
     width: 100%;
     outline: none;
+
+    &:-webkit-autofill+label {
+        font-size: 12px;
+        top: 25%;
+        transform: translateY(-50%)
+    }
 `
 
 export const Placeholder = styled.label`
