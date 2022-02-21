@@ -80,6 +80,7 @@ export const Body = styled.div`
     white-space: pre-wrap;
     user-select: none;
     overflow: hidden;
+    transition: all 0.25s cubic-bezier(0.5, 0, 0.1, 1);
     
     &.closed {
         max-height: 0;
