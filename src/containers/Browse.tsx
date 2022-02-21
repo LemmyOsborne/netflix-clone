@@ -118,7 +118,7 @@ export const BrowseContainer: React.FC<{ slides: ISlides }> = ({ slides }) => {
     </>
   ) : (
     <>
-      <HeaderContainer bg={false} />
+      <HeaderContainer bg={false} showSignInButton={false} />
       <ProfilesContainer user={{ displayName: user?.displayName, photoURL: user?.photoURL }} setProfile={setProfile} />
     </>
   )

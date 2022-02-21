@@ -32,7 +32,7 @@ export const SignIn: React.FC = () => {
 
     return (
         <>
-            <HeaderContainer>
+            <HeaderContainer bg={true} showSignInButton={false}>
                 <Form>
                     <Form.Title>Sign In</Form.Title>
                     <Form.Base onSubmit={handleSubmit} >
