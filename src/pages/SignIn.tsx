@@ -3,10 +3,10 @@ import { HeaderContainer } from '../containers/Header';
 import { FooterContainer } from '../containers/Footer';
 import { useState } from 'react';
 import * as ROUTES from "../constants/routes";
-import { getAuth, signInWithEmailAndPassword, signInWithRedirect } from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from 'react-router-dom';
 import { Form } from '../components';
-import { FacebookAuthProvider } from "firebase/auth";
+import { useFacebookAuth } from '../hooks/useFacebookAuth';
 
 
 
@@ -35,18 +35,7 @@ export const SignIn: React.FC = () => {
         }
     }, [auth, emailAddress, password, navigate])
 
-
-    const provider = new FacebookAuthProvider()
-    // const facebookSignInHandler = async () => {
-    //     try {
-    //         await 
-    //     } catch (error: any) {
-    //         setEmailAddress("")
-    //         setPassword("")
-    //         setError(error.message)
-    //     }
-
-    // }
+    const { facebookSignIn, facebookError, loading } = useFacebookAuth()
 
     return (
         <>
@@ -83,6 +72,7 @@ export const SignIn: React.FC = () => {
                                 Password
                             </Form.Placeholder>
                             {error && <Form.Error>{error}</Form.Error>}
+                            {facebookError && <Form.Error>{facebookError}</Form.Error>}
                         </Form.InputWrapper>
                         <Form.Button
                             onClick={() => setIsSubmitting(true)}
@@ -99,7 +89,15 @@ export const SignIn: React.FC = () => {
                             <span>Need help?</span>
                         </Form.RememberMe>
                     </Form.Base>
-                    <Form.FacebookLogin onClick={() => signInWithRedirect(auth, provider)}><img src="/images/icons/facebook.png" alt="Facebook Logo" />Login with Facebook</Form.FacebookLogin>
+                    <Form.FacebookLogin
+                        onClick={facebookSignIn}
+                    >
+                        <img src="/images/icons/facebook.png"
+                            alt="Facebook Logo"
+                        />
+                        Login with Facebook
+                    </Form.FacebookLogin>
+                    {!facebookError && loading && <img src="/images/misc/loading.gif" alt="Loading"/>}
                     <Form.SignUpLink to={ROUTES.SIGNUP}><span>New to Netflix?</span>Sign up now.</Form.SignUpLink>
                     <Form.CaptchaText>This page is protected by Google reCAPTCHA to ensure you're not a bot.<span>Learn more.</span></Form.CaptchaText>
                 </Form>

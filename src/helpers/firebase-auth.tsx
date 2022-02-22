@@ -8,9 +8,8 @@ const FirebaseAuthProvider: React.FC = ({ children }) => {
   const [user, setUser] = useState<User | null>(JSON.parse(`${localStorage.getItem("authUser")}`))
   
   const value = { user }
-
+  const auth = getAuth()
   useEffect(() => {
-    const auth = getAuth()
     const listener = onAuthStateChanged(auth, authUser => {
       if (authUser) {
         localStorage.setItem("authUser", JSON.stringify(authUser))
@@ -21,7 +20,7 @@ const FirebaseAuthProvider: React.FC = ({ children }) => {
       }
     })
     return () => listener()
-  }, [])
+  }, [auth])
 
   return (
     <FirebaseAuthContext.Provider value={value}>
