@@ -44,6 +44,7 @@ export const SignUp: React.FC = () => {
           <Form.Base onSubmit={handleSubmit} >
             <Form.InputWrapper>
               <Form.Input
+                error={error}
                 value={firstName}
                 autoComplete="off"
                 id="firstNameInput"
@@ -58,6 +59,7 @@ export const SignUp: React.FC = () => {
             </Form.InputWrapper>
             <Form.InputWrapper>
               <Form.Input
+                error={error}
                 value={emailAddress}
                 autoComplete="off"
                 id="emailInput"
@@ -72,6 +74,7 @@ export const SignUp: React.FC = () => {
             </Form.InputWrapper>
             <Form.InputWrapper>
               <Form.Input
+                error={error}
                 value={password}
                 id="passwordInput"
                 type="password"

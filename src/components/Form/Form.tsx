@@ -8,7 +8,7 @@ interface FormComposition {
     Title: React.FC<React.HTMLAttributes<HTMLHeadingElement>>
     Base: React.FC<React.FormHTMLAttributes<HTMLFormElement>>
     InputWrapper: React.FC<React.HTMLAttributes<HTMLDivElement>>
-    Input: React.FC<React.InputHTMLAttributes<HTMLInputElement>>
+    Input: React.FC<React.InputHTMLAttributes<HTMLInputElement> & {error: string}>
     Placeholder: React.FC<React.LabelHTMLAttributes<HTMLLabelElement>>
     Error: React.FC<React.HTMLAttributes<HTMLDivElement>>
     Button: React.FC<React.ButtonHTMLAttributes<HTMLButtonElement>>
@@ -53,11 +53,11 @@ Form.InputWrapper = function FormInputWrapper({ children, ...restProps }) {
     )
 }
 
-Form.Input = function FormInput({ value, ...restProps }) {
+Form.Input = function FormInput({ value, error, ...restProps }) {
     const { togglePlaceholder, setTogglePlaceholder } = useContext(ToggleContext)
 
     const handleInputFocus = () => {
-        !value
+        !value || error
             ? setTogglePlaceholder(!togglePlaceholder)
             : setTogglePlaceholder(togglePlaceholder)
     }

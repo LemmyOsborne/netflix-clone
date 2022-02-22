@@ -21,6 +21,9 @@
 # firebase
 /src/firebase/firebase.ts
 
+# gifs for readme
+/public/images/readme
+
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*

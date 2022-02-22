@@ -30,6 +30,7 @@ export const SignIn: React.FC = () => {
         } catch (error: any) {
             setEmailAddress("")
             setPassword("")
+            setIsSubmitting(false)
             setError(error.message)
         }
     }, [auth, emailAddress, password, navigate])
@@ -55,6 +56,7 @@ export const SignIn: React.FC = () => {
                     <Form.Base onSubmit={handleSubmit} >
                         <Form.InputWrapper >
                             <Form.Input
+                                error={error}
                                 value={emailAddress}
                                 autoComplete="off"
                                 id="emailInput"
@@ -69,6 +71,7 @@ export const SignIn: React.FC = () => {
                         </Form.InputWrapper>
                         <Form.InputWrapper>
                             <Form.Input
+                                error={error}
                                 value={password}
                                 id="passwordInput"
                                 type="password"
