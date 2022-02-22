@@ -197,6 +197,7 @@ export const SearchIcon = styled.button`
   border: none;
   cursor: pointer;
   margin-right: 10px;
+  outline: none;
 
   img {
     filter: brightness(0) invert(1);

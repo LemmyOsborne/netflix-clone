@@ -91,7 +91,7 @@ export const Feature = styled.div<{src?: string}>`
     display: flex;
     justify-content: space-between;
     background-image: ${({ src }) => `url(${src});`};
-    background-size: cover;
+    background-size: contain;
     position: relative;
     max-height: 360px;
     background-position-x: right;
@@ -99,6 +99,9 @@ export const Feature = styled.div<{src?: string}>`
     background-color: black;
     padding-left: 20px;
 
+    @media (max-width: 1000px) {
+        background-size: cover;
+    }
 `
 
 export const FeatureTitle = styled.h1`
