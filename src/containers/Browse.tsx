@@ -64,7 +64,7 @@ export const BrowseContainer: React.FC<{ slides: ISlides }> = ({ slides }) => {
     } else {
       setSlideRows((slides as any)[category])
     }
-  }, [searchTerm, category, slideRows, slides])
+  }, [searchTerm])
 
   return profile?.displayName ? (
     <>
