@@ -117,10 +117,22 @@ This section contains the FAQs in a form of accordion, when you click anywhere i
 
 <div align="center"><a name="menu"></a>
 
+ ***Clicking on card***
+  <br/>
 ![Preview](/public/images/readme/preview-4.gif)
+  <hr/>
+  ***Select category***
+  <br/>
 ![Preview](/public/images/readme/preview-5.gif)
+  <hr/>
+  ***Search***
+  <br/>
 ![Preview](/public/images/readme/preview-6.gif)
+  <hr/>
+  ***Play video***
+  <br/>
 ![Preview](/public/images/readme/preview-7.gif)
+  <hr/>
 </div>
 
 
@@ -182,6 +194,7 @@ This section contains the FAQs in a form of accordion, when you click anywhere i
 - React Testing Library.
 - React Router.
 - React Hooks.
+- Fuse.js.
 
 # Автор
 
