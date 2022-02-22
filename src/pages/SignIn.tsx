@@ -6,7 +6,7 @@ import * as ROUTES from "../constants/routes";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from 'react-router-dom';
 import { Form } from '../components';
-import { useFacebookAuth } from '../hooks/useFacebookAuth';
+import { useFacebookAuth } from '../hooks';
 
 
 
@@ -97,7 +97,7 @@ export const SignIn: React.FC = () => {
                         />
                         Login with Facebook
                     </Form.FacebookLogin>
-                    {!facebookError && loading && <img src="/images/misc/loading.gif" alt="Loading"/>}
+                    {!facebookError && loading && <Form.Loading />}
                     <Form.SignUpLink to={ROUTES.SIGNUP}><span>New to Netflix?</span>Sign up now.</Form.SignUpLink>
                     <Form.CaptchaText>This page is protected by Google reCAPTCHA to ensure you're not a bot.<span>Learn more.</span></Form.CaptchaText>
                 </Form>

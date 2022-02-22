@@ -6,6 +6,7 @@ import * as ROUTES from "../constants/routes";
 import { getAuth, createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { useNavigate } from 'react-router-dom';
 import { Form } from '../components';
+import { useFacebookAuth } from '../hooks';
 
 export const SignUp: React.FC = () => {
   const [firstName, setFirstName] = useState("")
@@ -29,12 +30,14 @@ export const SignUp: React.FC = () => {
       })
       navigate(ROUTES.BROWSE)
     } catch (error: any) {
-        setFirstName("")
-        setEmailAddress("")
-        setPassword("")
-        setError(error.message)
-      }
+      setFirstName("")
+      setEmailAddress("")
+      setPassword("")
+      setError(error.message)
+    }
   }, [auth, emailAddress, password, firstName, navigate])
+
+  const { facebookSignIn, facebookError, loading } = useFacebookAuth()
 
   return (
     <>
@@ -86,13 +89,13 @@ export const SignUp: React.FC = () => {
                 Password
               </Form.Placeholder>
             </Form.InputWrapper>
-            <Form.Button 
-            onClick={() => setIsSubmitting(true)} 
-            disabled={isInvalid} 
-            type="submit"
+            <Form.Button
+              onClick={() => setIsSubmitting(true)}
+              disabled={isInvalid}
+              type="submit"
             >
               {isSubmitting ? "Submiting..." : "Sign Up"}
-              </Form.Button>
+            </Form.Button>
             <Form.RememberMe>
               <div>
                 <Form.Checkbox type="checkbox" id="checkbox" />
@@ -101,7 +104,15 @@ export const SignUp: React.FC = () => {
               <span>Need help?</span>
             </Form.RememberMe>
           </Form.Base>
-          <Form.FacebookLogin><img src="/images/icons/facebook.png" alt="Facebook Logo" />Login with Facebook</Form.FacebookLogin>
+          <Form.FacebookLogin
+            onClick={facebookSignIn}
+          >
+            <img src="/images/icons/facebook.png"
+              alt="Facebook Logo"
+            />
+            Login with Facebook
+          </Form.FacebookLogin>
+          {!facebookError && loading && <Form.Loading />}
           <Form.SignUpLink to={ROUTES.SIGNIN}><span>Already a user?</span>Sign in now.</Form.SignUpLink>
           <Form.CaptchaText>This page is protected by Google reCAPTCHA to ensure you're not a bot.<span>Learn more.</span></Form.CaptchaText>
         </Form>

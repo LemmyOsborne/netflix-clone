@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { LinkProps } from 'react-router-dom';
 import { ToggleContext } from '../../context/togglePlaceHolder';
-import { Container, Inner, Checkbox, Title, Base, InputWrapper, Input, Placeholder, Button, RememberMe, FacebookLogin, SignUpLink, CaptchaText, Error } from "./Form.styles";
+import { Container, Inner, Checkbox, Title, Base, InputWrapper, Input, Placeholder, Button, RememberMe, FacebookLogin, SignUpLink, CaptchaText, Error, Loading } from "./Form.styles";
 
 
 interface FormComposition {
@@ -17,6 +17,7 @@ interface FormComposition {
     FacebookLogin: React.FC<React.AnchorHTMLAttributes<HTMLAnchorElement>>
     SignUpLink: React.FC<LinkProps>
     CaptchaText: React.FC<React.HTMLAttributes<HTMLDivElement>>
+    Loading: React.FC<React.ImgHTMLAttributes<HTMLImageElement>>
 }
 
 
@@ -103,4 +104,8 @@ Form.SignUpLink = function FormSignUpLink({ children, ...restProps }) {
 
 Form.CaptchaText = function FormCaptchaText({ children, ...restProps }) {
     return <CaptchaText {...restProps}>{children}</CaptchaText>
+}
+
+Form.Loading = function FormLoading({ ...restProps }) {
+    return <Loading src="/images/misc/loading.gif" alt="Loading" {...restProps}/>
 }

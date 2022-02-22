@@ -20,7 +20,7 @@ const FirebaseAuthProvider: React.FC = ({ children }) => {
       }
     })
     return () => listener()
-  }, [auth])
+  }, [])
 
   return (
     <FirebaseAuthContext.Provider value={value}>
