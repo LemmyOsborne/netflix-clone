@@ -95,3 +95,64 @@ export const Video = styled.video`
         vertical-align: baseline;
     }
 `
+
+export const AnimationContainer = styled.div`
+    display: flex;
+    align-items: center;
+    min-width: 15em;
+    position: absolute;
+    right: 40%;
+    bottom: 8%;
+    border: 2px solid rgba(255,255,255,.25);
+    box-shadow: 0 0 2em 0 #000;
+    border-radius: 0.75em;
+    z-index: 99;
+    background-color: #000;
+    width: 60%;
+    padding: 10px 15px;
+
+    img {
+        height: 5em;
+        margin-right: 20px;
+    }
+
+    &::after {
+        width: 3em;
+        height: 3em;
+        outline: 2px solid #000;
+        outline-offset: -2px;
+        display: block;
+        background: url("/images/misc/downloading.gif") center center no-repeat;
+        -webkit-background-size: 100% 100%;
+        -moz-background-size: 100%;
+        background-size: 100%;
+        content: '';
+        -webkit-box-flex: 0;
+        -webkit-flex-grow: 0;
+        -moz-box-flex: 0;
+        -ms-flex-positive: 0;
+        flex-grow: 0;
+        -webkit-flex-shrink: 0;
+        -ms-flex-negative: 0;
+        flex-shrink: 0;
+    }
+`
+
+export const AnimationText = styled.div`
+    display: flex;
+    flex-direction: column;
+    margin-right: 85px;
+    white-space: nowrap;
+
+    h2 {
+        color: white;
+        margin: 0;
+        font-size: 16px;
+    }
+
+    p {
+        color: #0071eb;
+        font-size: 14px;
+        margin: 0;
+    }
+`

@@ -4,8 +4,9 @@ import { Link } from 'react-router-dom';
 export const Background = styled.div<{ src?: string, hideOnSmallScreen?: boolean }>`
   display: flex;
   flex-direction: column;
-  background-color: linear-gradient(to top,rgba(0,0,0,.8) 0,rgba(0,0,0,0) 60%,rgba(0,0,0,.8) 100%);
-  background-image: url(${({ src }) => (src ? `../images/misc/${src}.jpg` : '../images/misc/home-bg.jpg')});
+  background-color: rgba(0,0,0,.4);
+  background-image: linear-gradient(to top,rgba(0,0,0,.8) 0,rgba(0,0,0,0) 60%,rgba(0,0,0,.8) 100%),
+  url(${({ src }) => (src ? `../images/misc/${src}.jpg` : '../images/misc/home-bg.jpg')});
   position: relative;
   width: 100%;
   height: 100%;

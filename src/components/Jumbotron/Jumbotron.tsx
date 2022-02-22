@@ -1,5 +1,5 @@
 import React from "react";
-import { Inner, Container, Pane, Image, Title, SubTitle, Item, Video } from "./Jumbotron.styles";
+import { Inner, Container, Pane, Image, Title, SubTitle, Item, Video, AnimationContainer, AnimationText } from "./Jumbotron.styles";
 
 
 interface JumbotronComposition {
@@ -9,6 +9,8 @@ interface JumbotronComposition {
     SubTitle: React.FC<React.HTMLAttributes<HTMLHeadingElement>>
     Image: React.FC<React.ImgHTMLAttributes<HTMLImageElement>>
     Video: React.FC<React.VideoHTMLAttributes<HTMLVideoElement> & {secondVideo?: "true"}>
+    AnimationContainer: React.FC<React.HTMLAttributes<HTMLDivElement>>
+    AnimationText: React.FC<React.HTMLAttributes<HTMLDivElement>>
 }
 
 
@@ -23,26 +25,34 @@ export const Jumbotron: React.FC<{direction: string}> & JumbotronComposition = (
 }
 
 
-Jumbotron.Container = ({ children, ...restProps }) => {
+Jumbotron.Container = function ({ children, ...restProps }) {
     return <Container {...restProps}>{children}</Container>
 }
 
-Jumbotron.Pane = ({ children, ...restProps }) => {
+Jumbotron.Pane = function ({ children, ...restProps }) {
     return <Pane {...restProps}>{children}</Pane>
 }
 
-Jumbotron.Title = ({ children, ...restProps }) => {
+Jumbotron.Title = function ({ children, ...restProps }) {
     return <Title {...restProps}>{children}</Title>
 }
 
-Jumbotron.SubTitle = ({ children, ...restProps }) => {
+Jumbotron.SubTitle = function ({ children, ...restProps }) {
     return <SubTitle {...restProps}>{children}</SubTitle>
 }
 
-Jumbotron.Image = ({ ...restProps }) => {
+Jumbotron.Image = function ({ ...restProps }) {
     return <Image {...restProps} />
 }
 
-Jumbotron.Video = ({ secondVideo,...restProps }) => {
+Jumbotron.Video = function ({ secondVideo,...restProps }) {
     return <Video className={secondVideo && "secondVideo"} {...restProps} />
+}
+
+Jumbotron.AnimationContainer = function ({ children, ...restProps }) {
+    return <AnimationContainer {...restProps}>{children}</AnimationContainer>
+}
+
+Jumbotron.AnimationText = function ({ children, ...restProps }) {
+    return <AnimationText {...restProps}>{children}</AnimationText>
 }
