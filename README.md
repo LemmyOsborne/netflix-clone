@@ -119,6 +119,8 @@ This section contains the FAQs in a form of accordion, when you click anywhere i
 
 ![Preview](/public/images/readme/preview-4.gif)
 ![Preview](/public/images/readme/preview-5.gif)
+![Preview](/public/images/readme/preview-6.gif)
+![Preview](/public/images/readme/preview-7.gif)
 </div>
 
 
