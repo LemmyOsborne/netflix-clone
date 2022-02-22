@@ -44,7 +44,7 @@ export const SignIn: React.FC = () => {
     //         setPassword("")
     //         setError(error.message)
     //     }
-        
+
     // }
 
     return (
@@ -81,7 +81,13 @@ export const SignIn: React.FC = () => {
                             </Form.Placeholder>
                             {error && <Form.Error>{error}</Form.Error>}
                         </Form.InputWrapper>
-                        <Form.Button onClick={() => setIsSubmitting(true)} disabled={isInvalid} type="submit">{isSubmitting ? "Submiting..." : "Sign In"}</Form.Button>
+                        <Form.Button
+                            onClick={() => setIsSubmitting(true)}
+                            disabled={isInvalid}
+                            type="submit"
+                        >
+                            {isSubmitting ? "Submiting..." : "Sign In"}
+                        </Form.Button>
                         <Form.RememberMe>
                             <div>
                                 <Form.Checkbox type="checkbox" id="checkbox" />
