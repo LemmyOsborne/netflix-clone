@@ -4,12 +4,11 @@ export const Inner = styled.div<{direction: string}>`
     display: flex;
     align-items: center;
     flex-direction: ${({ direction }) => direction};
-    justify-content: space-between;
     max-width: 1100px;
-    margin: auto;
     width: 100%;
+    margin: auto;
 
-    @media (max-width: 1000px) {
+    @media (max-width: 1200px) {
         flex-direction: column;
     }
 `
@@ -23,7 +22,7 @@ export const Item = styled.div`
 `
 
 export const Container = styled.div`
-    @media (max-width: 1000px) {
+    @media (max-width: 1200px) {
         ${Item}:last-of-type h2 {
             margin-bottom: 50px;
         }
@@ -33,8 +32,10 @@ export const Container = styled.div`
 export const Pane = styled.div`
     width: 50%;
     position: relative;
+    min-height: 100px;
+    justify-self: center;
 
-    @media (max-width: 1000px) {
+    @media (max-width: 1200px) {
         width: 100%;
         margin: 0 45px;
         text-align: center;
@@ -63,7 +64,6 @@ export const SubTitle = styled.h2`
 
 export const Image = styled.img`
     max-width: 100%;
-    height: auto;
     position: relative;
     z-index: 2
 `
@@ -97,18 +97,19 @@ export const Video = styled.video`
 `
 
 export const AnimationContainer = styled.div`
+    margin: -8% 0 -4% -15%;
+    min-width: 330px;
     display: flex;
     align-items: center;
-    min-width: 15em;
+    width: 60%;
     position: absolute;
     right: 40%;
-    bottom: 8%;
+    bottom: 12%;
     border: 2px solid rgba(255,255,255,.25);
     box-shadow: 0 0 2em 0 #000;
     border-radius: 0.75em;
     z-index: 99;
     background-color: #000;
-    width: 60%;
     padding: 10px 15px;
 
     img {
@@ -135,6 +136,17 @@ export const AnimationContainer = styled.div`
         -webkit-flex-shrink: 0;
         -ms-flex-negative: 0;
         flex-shrink: 0;
+        position: absolute;
+        right: 5%;
+    }
+
+    @media (max-width: 1200px) {
+        right: 24%;
+        width: 50%;
+    }
+
+    @media (max-width: 800px) {
+        display: none;
     }
 `
 
