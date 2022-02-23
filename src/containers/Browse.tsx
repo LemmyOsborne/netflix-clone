@@ -10,7 +10,6 @@ import { getAuth, signOut } from "firebase/auth";
 import { FooterContainer } from "./Footer";
 import { CardContainer } from "./Card";
 import Fuse from "fuse.js";
-import { useNavigate } from "react-router-dom";
 
 
 
@@ -68,7 +67,7 @@ export const BrowseContainer: React.FC<{ slides: ISlides }> = ({ slides }) => {
 
   return profile?.displayName ? (
     <>
-      {loading ? <Loading src={user?.photoURL} /> : <Loading.ReleaseBody />}
+      {loading ? <Loading photoURL={user?.photoURL} /> : <Loading.ReleaseBody />}
       <Header src={src} bg={true}>
         <Header.Frame>
           <Header.Group>
@@ -83,10 +82,10 @@ export const BrowseContainer: React.FC<{ slides: ISlides }> = ({ slides }) => {
           <Header.Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
           {user?.photoURL
             ? <Header.Menu>
-              <Header.Picture src={`/images/users/${user?.photoURL}.png`} alt="Menu" />
+              <Header.Picture photoURL={user?.photoURL} alt="Menu" />
               <Header.Dropdown>
                 <Header.Group>
-                  <Header.Picture src={`/images/users/${user?.photoURL}.png`} alt="User" />
+                  <Header.Picture photoURL={user?.photoURL} alt="User" />
                   <Header.TextLink>{user.displayName}</Header.TextLink>
                 </Header.Group>
                 <Header.Group>

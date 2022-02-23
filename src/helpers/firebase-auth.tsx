@@ -9,6 +9,7 @@ const FirebaseAuthProvider: React.FC = ({ children }) => {
   
   const value = { user }
   const auth = getAuth()
+  
   useEffect(() => {
     const listener = onAuthStateChanged(auth, authUser => {
       if (authUser) {
@@ -20,7 +21,7 @@ const FirebaseAuthProvider: React.FC = ({ children }) => {
       }
     })
     return () => listener()
-  }, [])
+  }, [auth])
 
   return (
     <FirebaseAuthContext.Provider value={value}>

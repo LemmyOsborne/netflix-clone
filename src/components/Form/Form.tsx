@@ -107,5 +107,5 @@ Form.CaptchaText = function FormCaptchaText({ children, ...restProps }) {
 }
 
 Form.Loading = function FormLoading({ ...restProps }) {
-    return <Loading src="/images/misc/loading.gif" alt="Loading" {...restProps}/>
+    return <Loading src="/images/misc/loading-2.gif" alt="Loading" {...restProps}/>
 }

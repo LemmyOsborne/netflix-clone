@@ -6,7 +6,7 @@ interface IProfiles extends React.FC {
     Title: React.FC<React.HTMLAttributes<HTMLHeadingElement>>
     List: React.FC<React.HTMLAttributes<HTMLUListElement>>
     User: React.FC<React.HTMLAttributes<HTMLLIElement>>
-    ProfileImage: React.FC<React.ImgHTMLAttributes<HTMLImageElement> | {src: string | undefined}>
+    ProfileImage: React.FC<React.ImgHTMLAttributes<HTMLImageElement> & {photoURL: string | undefined}>
     Name: React.FC<React.HTMLAttributes<HTMLParagraphElement>>
     Button: React.FC<React.ButtonHTMLAttributes<HTMLButtonElement>>
 }
@@ -29,8 +29,14 @@ Profiles.User = function ProfilesUser({ children, ...restProps }) {
     return <User {...restProps}>{children}</User>
 }
 
-Profiles.ProfileImage = function ProfilesProfileImage({src, ...restProps }) {
-    return <ProfileImage {...restProps} src={src}/>
+Profiles.ProfileImage = function ProfilesProfileImage({ photoURL, ...restProps }) {
+    const isFacebookPhoto = photoURL?.split(".").includes("facebook")
+
+    return isFacebookPhoto ? (
+    <ProfileImage src={photoURL} {...restProps}/>
+    ) : (
+        <ProfileImage src={`/images/users/${photoURL}.png`} {...restProps}/>
+    )
 }
 
 Profiles.Name = function ProfilesName({ children, ...restProps }) {

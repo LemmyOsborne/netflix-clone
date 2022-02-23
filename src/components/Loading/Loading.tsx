@@ -1,15 +1,17 @@
 import React, { HTMLAttributes } from 'react';
 import { LockBody, ReleaseBody, Spinner, Picture } from './Loading.styles';
 
-interface ILoading extends React.FC<{src: string | undefined | null}> {
+interface ILoading extends React.FC<{photoURL: string | undefined | null}> {
     ReleaseBody: React.FC<HTMLAttributes<HTMLBodyElement>>
 }
 
-export const Loading: ILoading = ({ src, ...restProps }) => {
+export const Loading: ILoading = ({ photoURL, ...restProps }) => {
+  const isFacebookPhoto = photoURL?.split(".").includes("facebook")
+
   return (
     <Spinner {...restProps}>
       <LockBody />
-      <Picture src={`/images/users/${src}.png`} alt="Profile image" />
+      <Picture src={isFacebookPhoto ? `${photoURL}` : `/images/users/${photoURL}.png`} alt="Profile image" />
     </Spinner>
   )
 }

@@ -15,7 +15,6 @@ export const RequireAuth: React.FC<IRequireAuth> = ({ user, children }): JSX.Ele
 }
 
 export const WithRedirectAuthUser: React.FC<IRequireAuth> = ({ user, children }): JSX.Element => {
-    
 
     return !user ? children : <Navigate to={ROUTES.BROWSE} />
 }

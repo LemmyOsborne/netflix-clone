@@ -13,8 +13,8 @@ interface IHeaderComposition extends React.FC<IHeader> {
     Search: React.FC<React.HTMLAttributes<HTMLDivElement> & { searchTerm: string, setSearchTerm: React.Dispatch<SetStateAction<string>> }>
     Dropdown: React.FC<React.HTMLAttributes<HTMLDivElement>>
     Group: React.FC<React.HTMLAttributes<HTMLDivElement>>
-    Picture: React.FC<React.ImgHTMLAttributes<HTMLImageElement>>
-    TextLink: React.FC<React.ButtonHTMLAttributes<HTMLButtonElement> & {active?: boolean}>
+    Picture: React.FC<React.ImgHTMLAttributes<HTMLImageElement> & { photoURL: string }>
+    TextLink: React.FC<React.ButtonHTMLAttributes<HTMLButtonElement> & { active?: boolean }>
 }
 
 interface IHeader {
@@ -94,8 +94,13 @@ Header.Group = function HeaderGroup({ children, ...restProps }) {
     return <Group {...restProps}>{children}</Group>
 }
 
-Header.Picture = function HeaderPicture({ ...restProps }) {
-    return <Picture {...restProps} />
+Header.Picture = function HeaderPicture({ photoURL, ...restProps }) {
+    const isFacebookPhoto = photoURL.split(".").includes("facebook")
+    return isFacebookPhoto ? (
+        <Picture src={photoURL} {...restProps} />
+    ) : (
+        <Picture src={`/images/users/${photoURL}.png`} {...restProps}/>
+    )
 }
 
 Header.TextLink = function HeaderTextLink({ active, children, ...restProps }) {

@@ -201,7 +201,6 @@ export const CaptchaText = styled.div`
 `
 
 export const Loading = styled.img`
-    background-color: transparent;
     width: 80px;
     height: auto;
 `

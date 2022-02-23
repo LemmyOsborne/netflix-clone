@@ -8,13 +8,14 @@ interface IProfilesContainer {
 }
 
 export const ProfilesContainer: React.FC<IProfilesContainer> = ({ user, setProfile }) => {
+
   return (
     <Profiles>
       <Profiles.Title>Who's watching?</Profiles.Title>
       <Profiles.List>
         <Profiles.User onClick={() => setProfile({ displayName: user?.displayName, photoURL: user?.photoURL })}>
-          <Profiles.ProfileImage src={`/images/users/${user.photoURL}.png`} alt="Profile Image" />
-          <Profiles.Name>{user?.displayName}</Profiles.Name>
+          <Profiles.ProfileImage photoURL={`${user.photoURL}`} alt="Profile Image" />
+          <Profiles.Name>{user?.displayName?.split(" ")[0]}</Profiles.Name>
         </Profiles.User>
       </Profiles.List>
       <Profiles.Button>Manage Profiles</Profiles.Button>
