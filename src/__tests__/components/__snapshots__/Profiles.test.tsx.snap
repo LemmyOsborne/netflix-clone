@@ -2,34 +2,34 @@
 
 exports[`<Profiles/> renders <Profiles/> 1`] = `
 <div
-  class="sc-iNGGcK gptbzR"
+  class="sc-nVkyK hQXjdv"
 >
   <h1
-    class="sc-jeraig ciXKSy"
+    class="sc-hiwPVj cYrYUi"
   >
     Who's watching?
   </h1>
   <ul
-    class="sc-eJwWfJ lnpsVZ"
+    class="sc-ehCJOs dzEkCu"
   >
     <li
-      class="sc-ehCJOs iRMOTV"
+      class="sc-clIzBv itBSPx"
     >
       <img
         alt="Profile Image"
-        class="sc-nVkyK irqvPW"
+        class="sc-lcepkR evupQE"
         data-testid="profile-image"
         src="/images/users/2.png"
       />
       <p
-        class="sc-hiwPVj fOkDCV"
+        class="sc-gGCDDS juiESv"
       >
         Lemmy
       </p>
     </li>
   </ul>
   <button
-    class="sc-lcepkR hQGDvq"
+    class="sc-faUpoM iFlaaN"
   >
     Manage Profiles
   </button>

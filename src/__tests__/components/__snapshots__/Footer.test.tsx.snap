@@ -2,117 +2,117 @@
 
 exports[`<Footer/> render <Footer/> populated with data 1`] = `
 <div
-  class="sc-furwcr eYeOMZ"
+  class="sc-jrQzAO fnyyir"
 >
   <p
-    class="sc-iqseJM iQdZkI"
+    class="sc-egiyK eGNQXw"
   >
     Questions? Call 8-800-100-9668
   </p>
   <div
-    class="sc-jrQzAO bpvYT"
+    class="sc-iqseJM jNYIpL"
   >
     <div
-      class="sc-pVTFL hMtDZF"
+      class="sc-kDTinF fLNJUH"
     >
       <a
-        class="sc-kDTinF bJjkMl"
+        class="sc-crHmcD chXOlU"
         href="#"
       >
         FAQ
       </a>
       <a
-        class="sc-kDTinF bJjkMl"
+        class="sc-crHmcD chXOlU"
         href="#"
       >
         Investor Relations
       </a>
       <a
-        class="sc-kDTinF bJjkMl"
+        class="sc-crHmcD chXOlU"
         href="#"
       >
         Privacy
       </a>
       <a
-        class="sc-kDTinF bJjkMl"
+        class="sc-crHmcD chXOlU"
         href="#"
       >
         Speed Test
       </a>
     </div>
     <div
-      class="sc-pVTFL hMtDZF"
+      class="sc-kDTinF fLNJUH"
     >
       <a
-        class="sc-kDTinF bJjkMl"
+        class="sc-crHmcD chXOlU"
         href="#"
       >
         Help Center
       </a>
       <a
-        class="sc-kDTinF bJjkMl"
+        class="sc-crHmcD chXOlU"
         href="#"
       >
         Jobs
       </a>
       <a
-        class="sc-kDTinF bJjkMl"
+        class="sc-crHmcD chXOlU"
         href="#"
       >
         Cookie Preferences
       </a>
       <a
-        class="sc-kDTinF bJjkMl"
+        class="sc-crHmcD chXOlU"
         href="#"
       >
         Legal Notices
       </a>
     </div>
     <div
-      class="sc-pVTFL hMtDZF"
+      class="sc-kDTinF fLNJUH"
     >
       <a
-        class="sc-kDTinF bJjkMl"
+        class="sc-crHmcD chXOlU"
         href="#"
       >
         Account
       </a>
       <a
-        class="sc-kDTinF bJjkMl"
+        class="sc-crHmcD chXOlU"
         href="#"
       >
         Ways to Watch
       </a>
       <a
-        class="sc-kDTinF bJjkMl"
+        class="sc-crHmcD chXOlU"
         href="#"
       >
         Corporate Information
       </a>
       <a
-        class="sc-kDTinF bJjkMl"
+        class="sc-crHmcD chXOlU"
         href="#"
       >
         Only on Netflix
       </a>
     </div>
     <div
-      class="sc-pVTFL hMtDZF"
+      class="sc-kDTinF fLNJUH"
     >
       <a
-        class="sc-kDTinF bJjkMl"
+        class="sc-crHmcD chXOlU"
         href="#"
       >
         Media center
       </a>
       <a
-        class="sc-kDTinF bJjkMl"
+        class="sc-crHmcD chXOlU"
         href="#"
       >
         Terms of Use
       </a>
       <a
-        class="sc-kDTinF bJjkMl"
+        class="sc-crHmcD chXOlU"
         href="#"
       >
         Contact Us
@@ -120,7 +120,7 @@ exports[`<Footer/> render <Footer/> populated with data 1`] = `
     </div>
   </div>
   <p
-    class="sc-crHmcD gaFGOI"
+    class="sc-bqiRlB gwEaQV"
   >
     Netflix Russia
   </p>

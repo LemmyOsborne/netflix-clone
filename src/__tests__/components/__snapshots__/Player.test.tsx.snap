@@ -2,10 +2,10 @@
 
 exports[`<Player/> renders the <Player/> with Witcher trailer video 1`] = `
 <div
-  class="sc-jQrDum"
+  class="sc-GEbAx"
 >
   <button
-    class="sc-GEbAx eTYOrQ"
+    class="sc-eGRUor eWvANt"
   >
     Play
   </button>

@@ -2,6 +2,8 @@ import React from "react";
 import { CtaForm } from "../../components";
 import { render } from "@testing-library/react";
 
+jest.mock("react-router-dom")
+
 describe("<CtaFotm/>", () => {
     it("render <CtaForm/>", () => {
         const { container, getByText, getByPlaceholderText, getByTestId } = render(

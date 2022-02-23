@@ -2,24 +2,24 @@
 
 exports[`<Accordion/> opens and close <Accordion/> 1`] = `
 <div
-  class="sc-egiyK cMIcmH"
+  class="sc-ksdxgE gxAGFI"
 >
   <div
-    class="sc-bqiRlB gDxtgh"
+    class="sc-hBUSln jsvVBB"
   >
     <h1
-      class="sc-ksdxgE eFyEKb"
+      class="sc-fotOHu dgCwIq"
     >
       Frequently Asked Questions
     </h1>
     <div
-      class="sc-hBUSln htuKs"
+      class="sc-fFeiMQ gIWfWm"
     >
       <div
-        class="sc-fotOHu eGgrZF"
+        class="sc-bkkeKt iWpaoK"
       >
         <div
-          class="sc-fFeiMQ dRzULq"
+          class="sc-ieecCq ksfSgK"
         >
           What is Netflix?
           <img
@@ -29,10 +29,10 @@ exports[`<Accordion/> opens and close <Accordion/> 1`] = `
         </div>
       </div>
       <div
-        class="sc-fotOHu eGgrZF"
+        class="sc-bkkeKt iWpaoK"
       >
         <div
-          class="sc-fFeiMQ dRzULq"
+          class="sc-ieecCq ksfSgK"
         >
           How much does Netflix cost?
           <img
@@ -42,10 +42,10 @@ exports[`<Accordion/> opens and close <Accordion/> 1`] = `
         </div>
       </div>
       <div
-        class="sc-fotOHu eGgrZF"
+        class="sc-bkkeKt iWpaoK"
       >
         <div
-          class="sc-fFeiMQ dRzULq"
+          class="sc-ieecCq ksfSgK"
         >
           Where can I watch?
           <img
@@ -55,10 +55,10 @@ exports[`<Accordion/> opens and close <Accordion/> 1`] = `
         </div>
       </div>
       <div
-        class="sc-fotOHu eGgrZF"
+        class="sc-bkkeKt iWpaoK"
       >
         <div
-          class="sc-fFeiMQ dRzULq"
+          class="sc-ieecCq ksfSgK"
         >
           How do I cancel?
           <img
@@ -68,10 +68,10 @@ exports[`<Accordion/> opens and close <Accordion/> 1`] = `
         </div>
       </div>
       <div
-        class="sc-fotOHu eGgrZF"
+        class="sc-bkkeKt iWpaoK"
       >
         <div
-          class="sc-fFeiMQ dRzULq"
+          class="sc-ieecCq ksfSgK"
         >
           What can I watch on Netflix?
           <img
@@ -81,10 +81,10 @@ exports[`<Accordion/> opens and close <Accordion/> 1`] = `
         </div>
       </div>
       <div
-        class="sc-fotOHu eGgrZF"
+        class="sc-bkkeKt iWpaoK"
       >
         <div
-          class="sc-fFeiMQ dRzULq"
+          class="sc-ieecCq ksfSgK"
         >
           Is Netflix good for kids?
           <img
@@ -100,24 +100,24 @@ exports[`<Accordion/> opens and close <Accordion/> 1`] = `
 
 exports[`<Accordion/> renders <Accordion/> populated with data 1`] = `
 <div
-  class="sc-egiyK cMIcmH"
+  class="sc-ksdxgE gxAGFI"
 >
   <div
-    class="sc-bqiRlB gDxtgh"
+    class="sc-hBUSln jsvVBB"
   >
     <h1
-      class="sc-ksdxgE eFyEKb"
+      class="sc-fotOHu dgCwIq"
     >
       Frequently Asked Questions
     </h1>
     <div
-      class="sc-hBUSln htuKs"
+      class="sc-fFeiMQ gIWfWm"
     >
       <div
-        class="sc-fotOHu eGgrZF"
+        class="sc-bkkeKt iWpaoK"
       >
         <div
-          class="sc-fFeiMQ dRzULq"
+          class="sc-ieecCq ksfSgK"
         >
           What is Netflix?
           <img
@@ -127,10 +127,10 @@ exports[`<Accordion/> renders <Accordion/> populated with data 1`] = `
         </div>
       </div>
       <div
-        class="sc-fotOHu eGgrZF"
+        class="sc-bkkeKt iWpaoK"
       >
         <div
-          class="sc-fFeiMQ dRzULq"
+          class="sc-ieecCq ksfSgK"
         >
           How much does Netflix cost?
           <img
@@ -140,10 +140,10 @@ exports[`<Accordion/> renders <Accordion/> populated with data 1`] = `
         </div>
       </div>
       <div
-        class="sc-fotOHu eGgrZF"
+        class="sc-bkkeKt iWpaoK"
       >
         <div
-          class="sc-fFeiMQ dRzULq"
+          class="sc-ieecCq ksfSgK"
         >
           Where can I watch?
           <img
@@ -153,10 +153,10 @@ exports[`<Accordion/> renders <Accordion/> populated with data 1`] = `
         </div>
       </div>
       <div
-        class="sc-fotOHu eGgrZF"
+        class="sc-bkkeKt iWpaoK"
       >
         <div
-          class="sc-fFeiMQ dRzULq"
+          class="sc-ieecCq ksfSgK"
         >
           How do I cancel?
           <img
@@ -166,10 +166,10 @@ exports[`<Accordion/> renders <Accordion/> populated with data 1`] = `
         </div>
       </div>
       <div
-        class="sc-fotOHu eGgrZF"
+        class="sc-bkkeKt iWpaoK"
       >
         <div
-          class="sc-fFeiMQ dRzULq"
+          class="sc-ieecCq ksfSgK"
         >
           What can I watch on Netflix?
           <img
@@ -179,10 +179,10 @@ exports[`<Accordion/> renders <Accordion/> populated with data 1`] = `
         </div>
       </div>
       <div
-        class="sc-fotOHu eGgrZF"
+        class="sc-bkkeKt iWpaoK"
       >
         <div
-          class="sc-fFeiMQ dRzULq"
+          class="sc-ieecCq ksfSgK"
         >
           Is Netflix good for kids?
           <img

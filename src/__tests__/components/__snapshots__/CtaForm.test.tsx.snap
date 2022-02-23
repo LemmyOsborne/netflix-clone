@@ -2,24 +2,24 @@
 
 exports[`<CtaFotm/> render <CtaForm/> 1`] = `
 <div
-  class="sc-ieecCq gAqVgf"
+  class="sc-hGPBjI iTCSKB"
   direction="row"
 >
   <div
-    class="sc-dJjYzT kMOoSo"
+    class="sc-dlVxhl lhvevl"
     data-testid="input-group"
   >
     <p
-      class="sc-kfPuZi eDHXs"
+      class="sc-bBHxTw dCICuo"
     >
       Ready to watch? Enter your email to create or restart your membership.
     </p>
     <input
-      class="sc-hGPBjI kHlctt"
+      class="sc-kfPuZi cbTujw"
       placeholder="Email address"
     />
     <button
-      class="sc-dlVxhl hkoIhf"
+      class="sc-fKVqWL bdthkQ"
     >
       Try it now
        

@@ -2,36 +2,36 @@
 
 exports[`<Card /> renders the <Card /> 1`] = `
 <div
-  class="sc-faUpoM hopiJT"
+  class="sc-dvQaRk hNyyuc"
 >
   <section
-    class="sc-Galmp jhPWti"
+    class="sc-TBWPX grpbFE"
   >
     <h1
-      class="sc-fWCJzd eajkjQ"
+      class="sc-jIkXHa EUXkj"
     >
       Documentaries
     </h1>
     <div
-      class="sc-jOxtWs jbAmDY"
+      class="sc-bTfYFJ cTpSSo"
     >
       <div
-        class="sc-ZOtfp chKrzF"
+        class="sc-eLwHnm fIseIx"
       >
         <img
-          class="sc-hmjpVf lidFwE"
+          class="sc-kHOZwM jHVaWf"
           src="/images/series/documentaries/tiger-king/small.jpg"
         />
         <div
-          class="sc-dvQaRk bxVuiA"
+          class="sc-ZOtfp hHYCuM"
         >
           <p
-            class="sc-TBWPX tWLDL"
+            class="sc-jOxtWs edIixX"
           >
             Tiger King
           </p>
           <p
-            class="sc-jIkXHa AVrYT"
+            class="sc-hmjpVf dthDqd"
           >
             Tiger King description
           </p>
@@ -40,33 +40,33 @@ exports[`<Card /> renders the <Card /> 1`] = `
     </div>
   </section>
   <section
-    class="sc-Galmp jhPWti"
+    class="sc-TBWPX grpbFE"
   >
     <h1
-      class="sc-fWCJzd eajkjQ"
+      class="sc-jIkXHa EUXkj"
     >
       Feel Good
     </h1>
     <div
-      class="sc-jOxtWs jbAmDY"
+      class="sc-bTfYFJ cTpSSo"
     >
       <div
-        class="sc-ZOtfp chKrzF"
+        class="sc-eLwHnm fIseIx"
       >
         <img
-          class="sc-hmjpVf lidFwE"
+          class="sc-kHOZwM jHVaWf"
           src="/images/series/feel-good/juno/small.jpg"
         />
         <div
-          class="sc-dvQaRk bxVuiA"
+          class="sc-ZOtfp hHYCuM"
         >
           <p
-            class="sc-TBWPX tWLDL"
+            class="sc-jOxtWs edIixX"
           >
             Juno
           </p>
           <p
-            class="sc-jIkXHa AVrYT"
+            class="sc-hmjpVf dthDqd"
           >
             Juno description
           </p>
@@ -79,37 +79,37 @@ exports[`<Card /> renders the <Card /> 1`] = `
 
 exports[`<Card /> renders the <Card /> with and clicks the card feature 1`] = `
 <div
-  class="sc-faUpoM hopiJT"
+  class="sc-dvQaRk hNyyuc"
 >
   <section
-    class="sc-Galmp jhPWti"
+    class="sc-TBWPX grpbFE"
   >
     <h1
-      class="sc-fWCJzd eajkjQ"
+      class="sc-jIkXHa EUXkj"
     >
       Documentaries
     </h1>
     <div
-      class="sc-jOxtWs jbAmDY"
+      class="sc-bTfYFJ cTpSSo"
     >
       <div
-        class="sc-ZOtfp chKrzF"
+        class="sc-eLwHnm fIseIx"
         data-testid="tiger-king-item-feature"
       >
         <img
-          class="sc-hmjpVf lidFwE"
+          class="sc-kHOZwM jHVaWf"
           src="/images/series/documentaries/tiger-king/small.jpg"
         />
         <div
-          class="sc-dvQaRk bxVuiA"
+          class="sc-ZOtfp hHYCuM"
         >
           <p
-            class="sc-TBWPX tWLDL"
+            class="sc-jOxtWs edIixX"
           >
             Tiger King
           </p>
           <p
-            class="sc-jIkXHa AVrYT"
+            class="sc-hmjpVf dthDqd"
           >
             Tiger King description
           </p>
@@ -118,34 +118,34 @@ exports[`<Card /> renders the <Card /> with and clicks the card feature 1`] = `
     </div>
   </section>
   <section
-    class="sc-Galmp jhPWti"
+    class="sc-TBWPX grpbFE"
   >
     <h1
-      class="sc-fWCJzd eajkjQ"
+      class="sc-jIkXHa EUXkj"
     >
       Feel Good
     </h1>
     <div
-      class="sc-jOxtWs jbAmDY"
+      class="sc-bTfYFJ cTpSSo"
     >
       <div
-        class="sc-ZOtfp chKrzF"
+        class="sc-eLwHnm fIseIx"
         data-testid="juno-item-feature"
       >
         <img
-          class="sc-hmjpVf lidFwE"
+          class="sc-kHOZwM jHVaWf"
           src="/images/series/feel-good/juno/small.jpg"
         />
         <div
-          class="sc-dvQaRk bxVuiA"
+          class="sc-ZOtfp hHYCuM"
         >
           <p
-            class="sc-TBWPX tWLDL"
+            class="sc-jOxtWs edIixX"
           >
             Juno
           </p>
           <p
-            class="sc-jIkXHa AVrYT"
+            class="sc-hmjpVf dthDqd"
           >
             Juno description
           </p>

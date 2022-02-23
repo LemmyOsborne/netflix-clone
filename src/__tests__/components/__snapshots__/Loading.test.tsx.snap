@@ -2,13 +2,14 @@
 
 exports[`<Loading /> renders the <Loading /> 1`] = `
 <div
-  class="sc-gGCDDS eCgYDZ"
+  class="sc-Galmp bMWYyW"
   data-testid="loading"
+  src="/images/2.png"
 >
   <img
     alt="Profile image"
-    class="sc-clIzBv esMQFg"
-    src="/images/users//images/2.png.png"
+    class="sc-fWCJzd dhYqHi"
+    src="/images/users/undefined.png"
   />
 </div>
 `;
