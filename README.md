@@ -25,7 +25,7 @@
 
 <div align="center"><a name="menu"></a>
 
-![Preview](/public/images/readme/preview-1.gif)
+![Preview](/public/images/readme/preview-1.png)
 </div>
 
 Домашняя страница состоит из 5 основных секций:
@@ -56,7 +56,7 @@
  
  <div align="center"><a name="menu"></a>
 
-![Preview](/public/images/readme/preview-2.gif)
+![Preview](/public/images/readme/preview-2.png)
 </div>
 
 Страница логина содержит 3 основные секции:
@@ -83,7 +83,7 @@
  
 <div align="center"><a name="menu"></a>
 
-![Preview](/public/images/readme/preview-3.gif)
+![Preview](/public/images/readme/preview-3.png)
 </div>
 
 Страница регистрации состоит из 3 основных секций:
@@ -115,31 +115,10 @@
 # Страница контента
 
 <div align="center"><a name="menu"></a>
-
- ***Клик по карточке***
   
-![Preview](/public/images/readme/preview-4.gif)
-  
-  ---
-  
-  ***Выбор категории***
-  
-![Preview](/public/images/readme/preview-5.gif)
-  
-  ---
-  
-  
-  ***Поиск***
-  
-![Preview](/public/images/readme/preview-6.gif)
-  
-  ---
-  
-  
-  ***Проигрывание видео***
-  
-![Preview](/public/images/readme/preview-7.gif)
-  
+![Preview](/public/images/readme/preview-4.png)
+![Preview](/public/images/readme/preview-5.png)
+![Preview](/public/images/readme/preview-6.png)  
   ---
 </div>
 
