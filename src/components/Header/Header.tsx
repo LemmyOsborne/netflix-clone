@@ -8,7 +8,7 @@ interface IHeaderComposition extends React.FC<IHeader> {
     Title: React.FC<React.HTMLAttributes<HTMLHeadingElement>>
     Text: React.FC<React.HTMLAttributes<HTMLParagraphElement>>
     ButtonLink: React.FC<LinkProps>
-    Logo: React.FC<{ to: string, src: string, alt: string }>
+    Logo: React.FC<{ to: string, src: string, alt: string, smallLogo?: boolean }>
     Menu: React.FC<React.HTMLAttributes<HTMLDivElement>>
     Search: React.FC<React.HTMLAttributes<HTMLDivElement> & { searchTerm: string, setSearchTerm: React.Dispatch<SetStateAction<string>> }>
     Dropdown: React.FC<React.HTMLAttributes<HTMLDivElement>>
@@ -40,10 +40,10 @@ Header.Frame = function HeaderFrame({ children, ...restProps }) {
     return <Container {...restProps}>{children}</Container>
 }
 
-Header.Logo = function HeaderLogo({ to, children, ...restProps }) {
+Header.Logo = function HeaderLogo({ to, smallLogo, children, ...restProps }) {
     return (
         <Link to={to}>
-            <Logo {...restProps} />
+            <Logo {...restProps} className={smallLogo ? "smallLogo" : ""} />
         </Link>
     )
 }
@@ -99,7 +99,7 @@ Header.Picture = function HeaderPicture({ photoURL, ...restProps }) {
     return isFacebookPhoto ? (
         <Picture src={photoURL} {...restProps} />
     ) : (
-        <Picture src={`/images/users/${photoURL}.png`} {...restProps}/>
+        <Picture src={`/images/users/${photoURL}.png`} {...restProps} />
     )
 }
 

@@ -99,14 +99,21 @@ export const Logo = styled.img`
   height: 45px; 
   width: 167px;
   margin-right: 40px;
+  outline: none;
+  border: 0;
+
+  &.smallLogo {
+    height: 25px;
+    width: 90px;
+  }
   
   @media (max-width: 700px) {
-    height: 20px;
+    height: 25px;
     width: 75px;
   }
 `
 
-export const TextLink = styled.button<{active?: boolean}>`
+export const TextLink = styled.button<{ active?: boolean }>`
   background: none;
   color: white;
   border: none;
@@ -173,7 +180,7 @@ export const Search = styled.div`
   }
 `
 
-export const SearchIpnut = styled.input<{active: boolean}>`
+export const SearchIpnut = styled.input<{ active: boolean }>`
   border: none;
   outline: none;
   background-color: rgba(64, 64, 64, 0.5);

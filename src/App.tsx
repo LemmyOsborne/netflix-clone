@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import * as ROUTES from "./constants/routes";
 import { RequireAuth, WithRedirectAuthUser } from './helpers/routes';
 import { useFirebaseAuth } from './hooks';
+import { NotFoundPage } from './pages/NotFound';
 // import { seedDataBase } from "./seed";
 // import { db } from './firebase/firebase';
 
@@ -26,6 +27,7 @@ const App: React.FC = () => {
         <Route path={ROUTES.SIGNIN} element={<WithRedirectAuthUser user={user}><SignIn /></WithRedirectAuthUser>} />
         <Route path={ROUTES.SIGNUP} element={<WithRedirectAuthUser user={user}><SignUp /></WithRedirectAuthUser>} />
         <Route path={ROUTES.BROWSE} element={<RequireAuth user={user}><Browse /></RequireAuth>} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </Router>
   )
