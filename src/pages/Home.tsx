@@ -6,7 +6,7 @@ import { HeaderContainer } from "../containers/Header";
 import { CtaForm, Feature } from "../components";
 
 
-export const Home: React.FC = () => {
+const Home: React.FC = () => {
 
     return (
         <>
@@ -29,3 +29,5 @@ export const Home: React.FC = () => {
         </>
     )
 }
+
+export default Home

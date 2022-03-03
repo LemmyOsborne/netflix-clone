@@ -5,12 +5,14 @@ import { BrowseContainer } from "../containers/Browse";
 import { ISlides } from '../types/types';
 
 
-export const Browse: React.FC = () => {
+const Browse: React.FC = () => {
   const { series } = useContent("series")
   const { films } = useContent("films")
 
   //This function return content sorted by genres 
   const slides: ISlides = genreFilter({ series, films })
-  
-  return <BrowseContainer slides={slides}/>
+
+  return <BrowseContainer slides={slides} />
 }
+
+export default Browse

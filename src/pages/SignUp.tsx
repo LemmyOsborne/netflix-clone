@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 import { Form } from '../components';
 import { useFacebookAuth } from '../hooks';
 
-export const SignUp: React.FC = () => {
+const SignUp: React.FC = () => {
   const [firstName, setFirstName] = useState("")
   const [emailAddress, setEmailAddress] = useState("")
   const [password, setPassword] = useState("")
@@ -122,3 +122,4 @@ export const SignUp: React.FC = () => {
   )
 }
 
+export default SignUp

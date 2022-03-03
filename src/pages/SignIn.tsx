@@ -11,7 +11,7 @@ import { useFacebookAuth } from '../hooks';
 
 
 
-export const SignIn: React.FC = () => {
+const SignIn: React.FC = () => {
     const [emailAddress, setEmailAddress] = useState("")
     const [password, setPassword] = useState("")
     const [error, setError] = useState("")
@@ -107,3 +107,5 @@ export const SignIn: React.FC = () => {
     )
 }
 
+
+export default SignIn
